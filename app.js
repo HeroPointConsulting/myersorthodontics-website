@@ -1,25 +1,28 @@
-// app.js
-import express from 'express';        // if "type": "module" in package.json
-// const express = require('express'); // ← old CommonJS style
+import express from 'express';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import { siteData } from './siteData.js';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-// ─────────────────────────────────────────────────────────
-// 1) Middleware section
-app.use(express.json());              // parse JSON bodies
-app.use(express.static('public'));    // serve files from /public
+// Middleware
+app.use(express.json());
+app.use(express.static('public'));
 
-// 2) Routes section
+// Routes
 app.get('/', (req, res) => {
-  res.send('Hello, world! 🥳');
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-app.get('/api/greeting', (req, res) => {
-  res.json({ message: 'Hello from the API!' });
+// API route for site data
+app.get('/api/sitedata', (req, res) => {
+  res.json(siteData);
 });
 
-// 3) Start the server
+// Start server
 app.listen(PORT, () => {
   console.log(`Server listening at http://localhost:${PORT}`);
 });
