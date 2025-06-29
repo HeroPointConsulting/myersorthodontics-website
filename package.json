@@ -9,7 +9,7 @@
     "dev": "nodemon app.js"
   },
   "dependencies": {
-    "express": "^4.19.0",
+    "express": "^4.21.2",
     "lucide": "^0.525.0"
   },
   "devDependencies": {

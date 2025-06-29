@@ -6,8 +6,7 @@ export class Logo {
 
   render() {
     return `
-      <a href="/" 
-         class="font-montserrat font-bold text-lg whitespace-nowrap transition-transform hover:scale-105 ${this.className}">
+      <a href="/" class="logo ${this.className}">
         M&nbsp;|&nbsp;O
       </a>
     `;

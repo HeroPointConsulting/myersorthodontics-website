@@ -1,0 +1,30 @@
+/* Layout Component Styles */
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.layout main {
+  flex: 1;
+}
+
+/* Layout-specific utility classes if needed */
+.layout-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 640px) {
+  .layout-container {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .layout-container {
+    padding: 0 2rem;
+  }
+} 

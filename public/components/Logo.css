@@ -1,0 +1,15 @@
+/* Logo Component Styles */
+.logo {
+  font-family: var(--font-montserrat);
+  font-weight: 700;
+  font-size: 1.125rem;
+  white-space: nowrap;
+  transition: transform 0.15s ease-in-out;
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+  text-decoration: none;
+} 

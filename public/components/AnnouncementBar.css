@@ -1,0 +1,25 @@
+/* AnnouncementBar Component Styles */
+.announcement-bar {
+  background-color: var(--color-accent-teal);
+  color: var(--color-primary-white);
+  text-align: center;
+  padding: 0.5rem 1rem;
+}
+
+.announcement-bar p {
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.announcement-bar a {
+  font-weight: 700;
+  color: var(--color-primary-white);
+  margin-left: 0.25rem;
+  transition: color 0.15s ease-in-out;
+  text-decoration: none;
+}
+
+.announcement-bar a:hover {
+  color: var(--color-accent-lime-green);
+  text-decoration: underline;
+} 

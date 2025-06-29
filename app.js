@@ -10,7 +10,15 @@ const __dirname = path.dirname(__filename);
 
 // Middleware
 app.use(express.json());
-app.use(express.static('public'));
+
+// Set proper MIME types for JavaScript modules
+app.use(express.static('public', {
+  setHeaders: (res, path) => {
+    if (path.endsWith('.js')) {
+      res.setHeader('Content-Type', 'text/javascript');
+    }
+  }
+}));
 
 // Routes
 app.get('/', (req, res) => {

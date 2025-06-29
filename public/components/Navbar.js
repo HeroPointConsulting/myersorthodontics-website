@@ -32,13 +32,10 @@ export class Navbar {
   renderDesktopNavigation() {
     return navigationItems.map(item => {
       const isActive = this.isActive(item.href);
-      const activeClass = isActive
-        ? 'text-accent-teal font-medium bg-primary-light-gray'
-        : 'text-primary-black';
+      const activeClass = isActive ? 'active' : '';
 
       return `
-        <a href="${item.href}" 
-           class="text-sm cursor-pointer nav-item ${activeClass}">
+        <a href="${item.href}" class="nav-item ${activeClass}">
           ${item.name}
         </a>
       `;
@@ -47,35 +44,31 @@ export class Navbar {
 
   render() {
     return `
-      <nav class="bg-primary-white shadow-sm border-b">
-        <div class="container mx-auto px-4">
-          <div class="flex justify-between items-center h-16">
-            <div class="flex-shrink-0 flex items-center gap-3">
+      <nav class="navbar">
+        <div class="navbar-container">
+          <div class="navbar-content">
+            <div class="navbar-brand">
               <!-- <div id="logo-placeholder"></div> --> <!-- TODO: Logo component -->
-              <a href="/" class="font-montserrat font-bold text-2xl text-primary-black cursor-pointer hover:text-accent-teal transition-colors">
-                M | O
-              </a>
-              <a href="/" class="font-montserrat font-bold text-2xl text-primary-black cursor-pointer hover:text-accent-teal transition-colors">
-                Myers Orthodontics
-              </a>
+              <a href="/" class="navbar-logo">M | O</a>
+              <a href="/">Myers Orthodontics</a>
             </div>
 
             <!-- Desktop Navigation -->
-            <div class="hidden md:block">
-              <div class="ml-10 flex items-baseline space-x-6">
+            <div class="navbar-desktop">
+              <div class="navbar-nav">
                 ${this.renderDesktopNavigation()}
               </div>
             </div>
 
             <!-- Mobile menu button -->
-            <div class="md:hidden">
+            <div class="navbar-mobile">
               <button type="button" 
                       id="mobile-menu-button"
-                      class="bg-primary-light-gray inline-flex items-center justify-center p-2 rounded-md text-primary-black hover:text-accent-teal hover:bg-primary-light-gray focus:outline-none focus:ring-2 focus:ring-inset transition-colors cursor-pointer"
+                      class="mobile-menu-button"
                       aria-controls="mobile-menu"
                       aria-expanded="false">
                 <span class="sr-only">Open main menu</span>
-                <i data-lucide="menu" class="h-6 w-6"></i>
+                <i data-lucide="menu" class="icon"></i>
               </button>
             </div>
           </div>

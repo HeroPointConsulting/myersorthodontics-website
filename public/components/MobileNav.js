@@ -6,34 +6,34 @@ export class MobileNav {
 
   render() {
     if (!this.isOpen) return '';
-    
+
     return `
-      <div class="fixed inset-0 z-50 md:hidden">
+      <div class="mobile-nav-overlay open">
         <!-- Backdrop -->
-        <div class="fixed inset-0 bg-black/50 backdrop-blur-sm" id="mobile-nav-backdrop"></div>
+        <div class="mobile-nav-backdrop" id="mobile-nav-backdrop"></div>
 
         <!-- Mobile navigation panel -->
-        <div class="fixed inset-0 bg-primary-white">
+        <div class="mobile-nav-panel">
           <!-- Header -->
-          <div class="flex items-center justify-between p-4 border-b">
-            <div class="flex items-center gap-2">
+          <div class="mobile-nav-header">
+            <div class="mobile-nav-logo">
               <!-- Logo placeholder -->
-              <div class="font-montserrat font-bold text-lg">M | O</div>
-              <a href="/" class="font-montserrat font-bold text-xl text-primary-black">
+              <div class="logo-text">M | O</div>
+              <a href="/" class="brand-text">
                 Myers Orthodontics
               </a>
             </div>
 
             <button type="button" 
                     id="mobile-nav-close"
-                    class="p-2 rounded-md text-primary-black hover:text-accent-teal hover:bg-primary-light-gray transition-colors cursor-pointer">
-              <i data-lucide="x" class="h-6 w-6"></i>
+                    class="mobile-nav-close">
+              <i data-lucide="x" class="icon"></i>
             </button>
           </div>
 
           <!-- Navigation items -->
-          <div class="p-6">
-            <nav class="space-y-2">
+          <div class="mobile-nav-content">
+            <nav class="mobile-nav-items">
               <!-- TODO: Add navigation items -->
             </nav>
           </div>
@@ -55,7 +55,7 @@ export class MobileNav {
   mount(selector) {
     const container = document.querySelector(selector);
     container.innerHTML = this.render();
-    
+
     if (this.isOpen && typeof lucide !== 'undefined') {
       lucide.createIcons();
     }

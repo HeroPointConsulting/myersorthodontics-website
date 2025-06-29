@@ -1,10 +1,10 @@
 export class AnnouncementBar {
   render() {
     return `
-      <div class="bg-accent-teal text-primary-white text-center py-2 px-4">
-        <p class="text-sm">
+      <div class="announcement-bar">
+        <p>
           Now accepting new patients!
-          <a href="/schedule" class="font-bold text-primary-white hover:text-accent-lime-green transition-colors ml-1 hover:underline">
+          <a href="/schedule">
             Book your consultation today.
           </a>
         </p>

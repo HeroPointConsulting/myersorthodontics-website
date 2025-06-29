@@ -21,7 +21,7 @@ export class Layout {
   mount(selector) {
     const container = document.querySelector(selector);
     container.innerHTML = this.render();
-    
+
     // Mount child components
     this.announcementBar.mount('#announcement-bar');
     this.navbar.mount('#navbar');
