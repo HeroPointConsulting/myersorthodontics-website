@@ -9,6 +9,10 @@
     "dev": "nodemon app.js"
   },
   "dependencies": {
-    "express": "^4.19.0"
+    "express": "^4.19.0",
+    "lucide": "^0.525.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.0"
   }
 }
