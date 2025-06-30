@@ -11,6 +11,7 @@ import { createTreatmentsPage, initTreatmentsPage } from './components/Treatment
 import { createTreatmentDetailPage, initTreatmentDetailPage } from './components/TreatmentDetailPage.js';
 import { createProcessPage, initProcessPage } from './components/ProcessPage.js';
 import { setMainContent } from './components/Layout.js';
+import { updateNavbarActiveState } from './components/Navbar.js';
 
 class Router {
   constructor() {
@@ -51,11 +52,15 @@ class Router {
     if (path.startsWith('/treatments/') && path !== '/treatments') {
       const slug = path.split('/treatments/')[1];
       this.renderTreatmentDetailPage(slug);
+      updateNavbarActiveState();
       return;
     }
 
     const route = this.routes[path] || this.routes['/'];
     route();
+
+    // Update navbar active state after route change
+    updateNavbarActiveState();
   }
 
   navigateTo(path) {

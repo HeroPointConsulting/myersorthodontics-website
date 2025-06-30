@@ -29,11 +29,25 @@ function renderDesktopNavigation() {
     const activeClass = isItemActive ? 'active' : '';
 
     return `
-      <a href="${item.href}" class="nav-item ${activeClass}">
+      <a href="${item.href}" class="nav-item ${activeClass}" data-route="${item.href}">
         ${item.name}
       </a>
     `;
   }).join('');
+}
+
+function updateNavbarActiveState() {
+  const currentPath = getCurrentPath();
+  const navItems = document.querySelectorAll('.nav-item');
+
+  navItems.forEach(item => {
+    const href = item.getAttribute('data-route') || item.getAttribute('href');
+    if (href === currentPath) {
+      item.classList.add('active');
+    } else {
+      item.classList.remove('active');
+    }
+  });
 }
 
 export function createNavbar() {
@@ -86,10 +100,15 @@ export function initNavbar() {
     lucide.createIcons();
   }
 
+  // Set initial active state
+  updateNavbarActiveState();
+
   // TODO: Mount child components when ready
   // initLogo('#logo-placeholder');
   // initMobileNav('#mobile-nav-placeholder');
 }
+
+export { updateNavbarActiveState };
 
 function toggleMobileMenu() {
   isMobileMenuOpen = !isMobileMenuOpen;
