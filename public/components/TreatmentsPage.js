@@ -79,6 +79,7 @@ export function createTreatmentsPage() {
                 </div>
                 <h3 class="process-step-title">${step.title}</h3>
                 <p class="process-step-description">${step.description}</p>
+                <div class="process-step-line ${step.color}"></div>
               </div>
             `).join('')}
           </div>

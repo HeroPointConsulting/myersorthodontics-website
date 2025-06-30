@@ -270,6 +270,7 @@
 
 .process-step {
   text-align: center;
+  transition: all 300ms ease;
 }
 
 .process-step-number {
@@ -284,6 +285,8 @@
   font-family: var(--font-montserrat);
   font-weight: 700;
   font-size: 1.25rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transition: all 300ms ease;
 }
 
 .process-step-number.bg-accent-teal {
@@ -308,13 +311,58 @@
   font-size: 1.125rem;
   color: var(--color-primary-black);
   margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: color 300ms ease;
 }
 
 .process-step-description {
   color: #4b5563;
   font-size: 0.875rem;
   line-height: 1.4;
-  margin: 0;
+  margin: 0 0 1rem 0;
+}
+
+.process-step-line {
+  width: 3rem;
+  height: 2px;
+  margin: 0 auto;
+  opacity: 0;
+  transition: opacity 300ms ease;
+}
+
+.process-step-line.bg-accent-teal {
+  background-color: var(--color-accent-teal);
+}
+
+.process-step-line.bg-accent-lime-green {
+  background-color: var(--color-accent-lime-green);
+}
+
+.process-step-line.bg-accent-magenta {
+  background-color: var(--color-accent-magenta);
+}
+
+.process-step-line.bg-accent-pink {
+  background-color: var(--color-accent-pink);
+}
+
+/* Hover effects for process steps */
+.process-step:hover .process-step-number {
+  transform: scale(1.1);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.process-step:hover .process-step-title {
+  color: var(--color-accent-teal);
+}
+
+.process-step:hover .process-step-line {
+  opacity: 1;
+}
+
+.process-step:hover {
+  transform: translateY(-2px);
 }
 
 /* CTA Section */
