@@ -67,6 +67,14 @@ export function createProcessSection() {
           `).join('')}
         </div>
 
+        <!-- Learn More Button -->
+        <div class="process-learn-more">
+          <a href="/process" class="process-learn-more-button" data-route>
+            <i data-lucide="arrow-right" class="process-learn-more-icon"></i>
+            Learn More About Our Process
+          </a>
+        </div>
+
         <!-- Financing box -->
         <div class="process-financing-box">
           <div class="process-financing-content">

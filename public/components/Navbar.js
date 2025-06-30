@@ -4,7 +4,7 @@ import { createLogo } from './Logo.js';
 const navigationItems = [
   { name: 'About', href: '/about' },
   { name: 'Treatments', href: '/treatments' },
-  { name: 'Our Process', href: '/our-process' },
+  { name: 'Our Process', href: '/process' },
   { name: 'Schedule', href: '/schedule' },
   { name: 'Reviews', href: '/reviews' },
   { name: 'Our Team', href: '/team' },

@@ -1,15 +1,16 @@
-import { createHero, initHero, destroyHero } from './Hero.js';
-import { createTreatmentsSection, initTreatmentsSection } from './TreatmentsSection.js';
-import { createAboutSection, initAboutSection } from './AboutSection.js';
-import { createProcessSection, initProcessSection } from './ProcessSection.js';
-import { createTeamSection, initTeamSection } from './TeamSection.js';
-import { createTestimonialsSection } from './TestimonialsSection.js';
-import { createFAQSection, initFAQSection } from './FAQSection.js';
-import { createNewsletterSection, initNewsletterSection } from './NewsletterSection.js';
-import { createAboutPage, initAboutPage } from './AboutPage.js';
-import { createTreatmentsPage, initTreatmentsPage } from './TreatmentsPage.js';
-import { createTreatmentDetailPage, initTreatmentDetailPage } from './TreatmentDetailPage.js';
-import { setMainContent } from './Layout.js';
+import { createHero, initHero, destroyHero } from './components/Hero.js';
+import { createTreatmentsSection, initTreatmentsSection } from './components/TreatmentsSection.js';
+import { createAboutSection, initAboutSection } from './components/AboutSection.js';
+import { createProcessSection, initProcessSection } from './components/ProcessSection.js';
+import { createTeamSection, initTeamSection } from './components/TeamSection.js';
+import { createTestimonialsSection } from './components/TestimonialsSection.js';
+import { createFAQSection, initFAQSection } from './components/FAQSection.js';
+import { createNewsletterSection, initNewsletterSection } from './components/NewsletterSection.js';
+import { createAboutPage, initAboutPage } from './components/AboutPage.js';
+import { createTreatmentsPage, initTreatmentsPage } from './components/TreatmentsPage.js';
+import { createTreatmentDetailPage, initTreatmentDetailPage } from './components/TreatmentDetailPage.js';
+import { createProcessPage, initProcessPage } from './components/ProcessPage.js';
+import { setMainContent } from './components/Layout.js';
 
 class Router {
   constructor() {
@@ -17,6 +18,7 @@ class Router {
       '/': this.renderHomePage.bind(this),
       '/about': this.renderAboutPage.bind(this),
       '/treatments': this.renderTreatmentsPage.bind(this),
+      '/process': this.renderProcessPage.bind(this),
       // Dynamic route for treatment details - handled in handleRoute
     };
 
@@ -128,6 +130,17 @@ class Router {
 
     // Initialize treatment detail page
     initTreatmentDetailPage();
+  }
+
+  renderProcessPage() {
+    // Clean up any existing content
+    this.cleanup();
+
+    // Set process page content
+    setMainContent(createProcessPage());
+
+    // Initialize process page
+    initProcessPage();
   }
 
   cleanup() {

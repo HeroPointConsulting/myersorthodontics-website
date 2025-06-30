@@ -155,6 +155,98 @@ export const siteData = {
         description: 'Maintain your beautiful new smile with retainers',
         color: 'bg-accent-pink'
       }
+    ],
+    detailedProcess: [
+      {
+        id: 1,
+        title: 'Initial Consultation',
+        duration: '60 minutes',
+        description: 'Comprehensive examination including digital X-rays, photos, and treatment discussion.',
+        details: [
+          'Complete oral examination',
+          'Digital X-rays and photographs',
+          'Discussion of treatment goals',
+          'Treatment options presentation',
+          'Cost and timeline overview'
+        ],
+        color: 'process-step-teal',
+        bgColor: 'process-bg-teal'
+      },
+      {
+        id: 2,
+        title: 'Treatment Planning',
+        duration: '1-2 weeks',
+        description: 'Custom treatment plan creation using advanced 3D imaging and digital modeling.',
+        details: [
+          '3D digital impressions',
+          'Treatment simulation',
+          'Custom appliance design',
+          'Timeline finalization',
+          'Insurance coordination'
+        ],
+        color: 'process-step-lime',
+        bgColor: 'process-bg-lime'
+      },
+      {
+        id: 3,
+        title: 'Treatment Start',
+        duration: '90 minutes',
+        description: 'Beginning of your orthodontic journey with appliance placement and instructions.',
+        details: [
+          'Appliance placement',
+          'Oral hygiene instructions',
+          'Dietary guidelines',
+          'Emergency contact information',
+          'First adjustment scheduled'
+        ],
+        color: 'process-step-magenta',
+        bgColor: 'process-bg-magenta'
+      },
+      {
+        id: 4,
+        title: 'Regular Adjustments',
+        duration: '4-8 weeks',
+        description: 'Ongoing monitoring and adjustments to ensure optimal treatment progress.',
+        details: [
+          'Progress evaluation',
+          'Appliance adjustments',
+          'Oral health monitoring',
+          'Progress photos',
+          'Next appointment scheduling'
+        ],
+        color: 'process-step-pink',
+        bgColor: 'process-bg-pink'
+      },
+      {
+        id: 5,
+        title: 'Treatment Completion',
+        duration: '90 minutes',
+        description: 'Appliance removal and transition to the retention phase to maintain results.',
+        details: [
+          'Appliance removal',
+          'Final photos and impressions',
+          'Retainer fitting',
+          'Retention instructions',
+          'Long-term care planning'
+        ],
+        color: 'process-step-teal',
+        bgColor: 'process-bg-teal'
+      },
+      {
+        id: 6,
+        title: 'Retention & Follow-up',
+        duration: 'Ongoing',
+        description: 'Long-term maintenance to preserve your beautiful new smile.',
+        details: [
+          'Regular retention checkups',
+          'Retainer adjustments',
+          'Oral health monitoring',
+          'Lifetime smile guarantee',
+          'Emergency support'
+        ],
+        color: 'process-step-lime',
+        bgColor: 'process-bg-lime'
+      }
     ]
   },
 
@@ -453,5 +545,43 @@ export const siteData = {
       question: 'Do you accept insurance?',
       answer: 'We accept most major insurance plans and will help verify your benefits before treatment. We also offer flexible payment plans and financing options.'
     }
-  ]
+  ],
+
+  // Process-specific FAQ data
+  processFaq: [
+    {
+      question: 'How long does treatment typically take?',
+      answer: 'Treatment duration varies depending on the complexity of your case, but most patients complete treatment in 12-36 months. We\'ll provide a specific timeline during your consultation.'
+    },
+    {
+      question: 'Will treatment be painful?',
+      answer: 'Most patients experience mild discomfort for a few days after initial placement and adjustments. This is normal and indicates that your teeth are moving. We provide tips to manage any discomfort.'
+    },
+    {
+      question: 'How often will I need appointments?',
+      answer: 'Most patients visit us every 4-8 weeks for adjustments and progress monitoring. The frequency may vary based on your specific treatment plan and progress.'
+    }
+  ],
+
+  // Technology features
+  technology: [
+    {
+      icon: 'Monitor',
+      title: 'Digital Imaging',
+      description: '3D digital scans eliminate the need for messy impressions and provide precise treatment planning.',
+      color: 'tech-teal'
+    },
+    {
+      icon: 'Zap',
+      title: 'Treatment Simulation',
+      description: 'See your treatment results before you start with advanced computer modeling and simulation.',
+      color: 'tech-lime'
+    },
+    {
+      icon: 'Award',
+      title: 'Progress Monitoring',
+      description: 'Regular digital monitoring ensures your treatment stays on track and adjustments are made as needed.',
+      color: 'tech-magenta'
+    }
+  ],
 }; 
