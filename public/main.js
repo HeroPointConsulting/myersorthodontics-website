@@ -1,5 +1,5 @@
 import { createLayout, initLayout } from './components/Layout.js';
-import { Router } from './components/Router.js';
+import { Router } from './Router.js';
 
 class App {
   constructor() {

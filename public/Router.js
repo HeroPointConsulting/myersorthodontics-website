@@ -7,6 +7,8 @@ import { createTestimonialsSection } from './TestimonialsSection.js';
 import { createFAQSection, initFAQSection } from './FAQSection.js';
 import { createNewsletterSection, initNewsletterSection } from './NewsletterSection.js';
 import { createAboutPage, initAboutPage } from './AboutPage.js';
+import { createTreatmentsPage, initTreatmentsPage } from './TreatmentsPage.js';
+import { createTreatmentDetailPage, initTreatmentDetailPage } from './TreatmentDetailPage.js';
 import { setMainContent } from './Layout.js';
 
 class Router {
@@ -14,7 +16,8 @@ class Router {
     this.routes = {
       '/': this.renderHomePage.bind(this),
       '/about': this.renderAboutPage.bind(this),
-      // Add more routes here as needed
+      '/treatments': this.renderTreatmentsPage.bind(this),
+      // Dynamic route for treatment details - handled in handleRoute
     };
 
     this.init();
@@ -31,15 +34,24 @@ class Router {
 
     // Listen for link clicks
     document.addEventListener('click', (e) => {
-      if (e.target.matches('a[href^="/"]')) {
+      const link = e.target.closest('a[href^="/"]');
+      if (link) {
         e.preventDefault();
-        this.navigateTo(e.target.getAttribute('href'));
+        this.navigateTo(link.getAttribute('href'));
       }
     });
   }
 
   handleRoute() {
     const path = window.location.pathname;
+
+    // Check for dynamic treatment detail route
+    if (path.startsWith('/treatments/') && path !== '/treatments') {
+      const slug = path.split('/treatments/')[1];
+      this.renderTreatmentDetailPage(slug);
+      return;
+    }
+
     const route = this.routes[path] || this.routes['/'];
     route();
   }
@@ -94,6 +106,28 @@ class Router {
 
     // Initialize about page
     initAboutPage();
+  }
+
+  renderTreatmentsPage() {
+    // Clean up any existing content
+    this.cleanup();
+
+    // Set treatments page content
+    setMainContent(createTreatmentsPage());
+
+    // Initialize treatments page
+    initTreatmentsPage();
+  }
+
+  renderTreatmentDetailPage(slug) {
+    // Clean up any existing content
+    this.cleanup();
+
+    // Set treatment detail page content
+    setMainContent(createTreatmentDetailPage(slug));
+
+    // Initialize treatment detail page
+    initTreatmentDetailPage();
   }
 
   cleanup() {

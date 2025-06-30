@@ -1,4 +1,4 @@
-// import { Logo } from './Logo.js'; // TODO: Create Logo component
+import { createLogo } from './Logo.js';
 // import { MobileNav } from './MobileNav.js'; // TODO: Create MobileNav component
 
 const navigationItems = [
@@ -42,8 +42,7 @@ export function createNavbar() {
       <div class="navbar-container">
         <div class="navbar-content">
           <div class="navbar-brand">
-            <!-- <div id="logo-placeholder"></div> --> <!-- TODO: Logo component -->
-            <a href="/" class="navbar-logo">M | O</a>
+            ${createLogo('navbar-logo')}
             <a href="/">Myers Orthodontics</a>
           </div>
 

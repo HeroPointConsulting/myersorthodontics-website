@@ -11,11 +11,21 @@ const __dirname = path.dirname(__filename);
 // Middleware
 app.use(express.json());
 
-// Set proper MIME types for JavaScript modules
+// Set proper MIME types for JavaScript modules and prevent caching during development
 app.use(express.static('public', {
   setHeaders: (res, path) => {
     if (path.endsWith('.js')) {
       res.setHeader('Content-Type', 'text/javascript');
+      // Prevent aggressive caching of JS modules during development
+      res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+      res.setHeader('Pragma', 'no-cache');
+      res.setHeader('Expires', '0');
+    }
+    if (path.endsWith('.css')) {
+      // Prevent CSS caching during development
+      res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+      res.setHeader('Pragma', 'no-cache');
+      res.setHeader('Expires', '0');
     }
   }
 }));
