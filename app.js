@@ -20,14 +20,15 @@ app.use(express.static('public', {
   }
 }));
 
-// Routes
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
-});
-
 // API route for site data
 app.get('/api/sitedata', (req, res) => {
   res.json(siteData);
+});
+
+// Catch-all handler: send back index.html for any non-API routes
+// This allows client-side routing to work
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 // Start server
