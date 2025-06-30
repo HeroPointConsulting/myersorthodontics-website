@@ -412,16 +412,24 @@ export const siteData = {
   // FAQ Data
   faq: [
     {
-      question: 'How quickly will you respond to my inquiry?',
-      answer: 'We typically respond to phone calls within a few hours during business hours and to emails within 24 hours. For urgent matters, please call our main number.'
+      question: 'At what age should my child first see an orthodontist?',
+      answer: 'The American Association of Orthodontists recommends that children have their first orthodontic evaluation by age 7. This allows us to identify any potential issues early and determine the optimal time to begin treatment if needed.'
     },
     {
-      question: 'Do you offer virtual consultations?',
-      answer: 'Yes! We offer virtual consultations for initial assessments and follow-up appointments. Contact us to schedule your virtual visit.'
+      question: 'How long does orthodontic treatment typically take?',
+      answer: 'Treatment time varies depending on the individual case, but most patients wear braces for 18-24 months. Some minor cases may be completed in as little as 6 months, while more complex cases may take up to 36 months.'
     },
     {
-      question: 'What should I bring to my first appointment?',
-      answer: 'Please bring your insurance cards, a list of current medications, previous dental records if available, and a list of questions or concerns you\'d like to discuss.'
+      question: 'Do braces hurt?',
+      answer: 'You may experience some discomfort when your braces are first placed and after adjustment appointments, but this is typically mild and temporary. Most patients describe it as pressure rather than pain.'
+    },
+    {
+      question: "What's the difference between Invisalign and braces?",
+      answer: 'Invisalign uses a series of clear, removable aligners to gradually move teeth, while braces use brackets and wires that are fixed to the teeth. Invisalign is nearly invisible and can be removed for eating and cleaning, but requires strict patient compliance.'
+    },
+    {
+      question: 'How often will I need to come in for appointments?',
+      answer: 'Most patients with braces come in every 6-8 weeks for adjustments. Invisalign patients typically have appointments every 8-10 weeks to receive new sets of aligners.'
     },
     {
       question: 'Do you accept insurance?',
