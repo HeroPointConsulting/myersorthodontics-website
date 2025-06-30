@@ -69,7 +69,7 @@
   gap: 3rem;
 }
 
-.process-step-row {
+.process-page .process-step-row {
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -79,12 +79,12 @@
   transition: all 0.6s ease;
 }
 
-.process-step-row.animate-in {
+.process-page .process-step-row.animate-in {
   opacity: 1;
   transform: translateY(0);
 }
 
-.process-step-row.reverse {
+.process-page .process-step-row.reverse {
   flex-direction: column-reverse;
 }
 
@@ -102,13 +102,13 @@
   overflow: hidden;
 }
 
-.process-step-header {
+.process-page .process-step-header {
   display: flex;
   align-items: center;
   margin-bottom: 1rem;
 }
 
-.process-step-number-wrapper {
+.process-page .process-step-number-wrapper {
   position: relative;
   width: 3rem;
   height: 3rem;
@@ -118,7 +118,7 @@
   justify-content: center;
 }
 
-.process-step-circle-icon {
+.process-page .process-step-circle-icon {
   position: absolute;
   width: 3rem;
   height: 3rem;
@@ -127,7 +127,7 @@
   fill: rgba(255, 255, 255, 0.1);
 }
 
-.process-step-number {
+.process-page .process-step-number {
   font-family: var(--font-montserrat);
   font-weight: 700;
   font-size: 1.25rem;
