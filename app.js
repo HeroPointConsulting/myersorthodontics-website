@@ -1,7 +1,7 @@
 import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { siteData } from './siteData.js';
+import { siteData } from './public/siteData.js';
 
 const app = express();
 const PORT = process.env.PORT || 3000;

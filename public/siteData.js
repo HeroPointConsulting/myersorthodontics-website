@@ -48,37 +48,37 @@ export const siteData = {
   treatments: {
     homepage: [
       {
-        icon: 'Zap',
+        icon: 'GripHorizontal',
         title: 'Traditional Braces',
         description: 'Modern metal braces are more comfortable and efficient than ever, offering predictable results for all orthodontic cases.',
         href: '/treatments#traditional',
       },
       {
-        icon: 'Shield',
+        icon: 'SquareDashedTopSolid',
         title: 'Ceramic Braces',
         description: 'Tooth-colored braces blend in with your natural smile while providing the same effective treatment.',
         href: '/treatments#ceramic',
       },
       {
-        icon: 'Clock',
+        icon: 'Smile',
         title: 'Invisalign',
         description: 'Nearly invisible aligners that gently shift your teeth into place without metal brackets or wires.',
         href: '/treatments#invisalign',
       },
       {
-        icon: 'MapPin',
+        icon: 'Baby',
         title: 'Early Treatment',
         description: 'Interceptive orthodontics for children ages 7-10 can guide jaw growth and prevent serious problems later.',
         href: '/treatments#early',
       },
       {
-        icon: 'AlignLeft',
+        icon: 'RefreshCcw',
         title: 'Retainers',
         description: 'Custom retainers help maintain your beautiful new smile after braces or Invisalign treatment.',
         href: '/treatments#retainers',
       },
       {
-        icon: 'Stethoscope',
+        icon: 'Slice',
         title: 'Surgical Orthodontics',
         description: 'For severe cases, we coordinate with oral surgeons to combine orthodontics with jaw surgery for optimal results.',
         href: '/treatments#surgical',
@@ -572,7 +572,7 @@ export const siteData = {
       color: 'tech-teal'
     },
     {
-      icon: 'Zap',
+      icon: 'Braces',
       title: 'Treatment Simulation',
       description: 'See your treatment results before you start with advanced computer modeling and simulation.',
       color: 'tech-lime'

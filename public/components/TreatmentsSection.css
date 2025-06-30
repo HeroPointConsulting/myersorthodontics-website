@@ -127,7 +127,7 @@
   letter-spacing: 0.05em;
 }
 
-.treatment-description {
+.treatments-section .treatment-description {
   color: #6b7280;
   margin-bottom: 1rem;
   font-size: 0.875rem;
@@ -154,9 +154,10 @@
   stroke-width: 2.5;
 }
 
-.treatments-cta {
+.treatments-section .treatments-cta {
   text-align: center;
   margin-top: 4rem;
+  background-color: transparent;
 }
 
 .treatments-cta-button {

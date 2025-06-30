@@ -2,12 +2,12 @@ import { siteData } from '../siteData.js';
 
 // Icon mapping - we'll use Lucide icons from CDN
 const iconMap = {
-  'Zap': 'zap',
-  'Shield': 'shield',
-  'Clock': 'clock',
-  'MapPin': 'map-pin',
-  'AlignLeft': 'align-left',
-  'Stethoscope': 'stethoscope'
+  'GripHorizontal': 'grip-horizontal',
+  'SquareDashedTopSolid': 'square-dashed-top-solid',
+  'Smile': 'smile',
+  'Baby': 'baby',
+  'RefreshCcw': 'refresh-ccw',
+  'Slice': 'slice'
 };
 
 export function createTreatmentsSection() {
