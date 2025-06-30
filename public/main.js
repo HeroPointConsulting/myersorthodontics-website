@@ -1,10 +1,12 @@
 import { Layout } from './components/Layout.js';
 import { Hero } from './components/Hero.js';
+import { TreatmentsSection } from './components/TreatmentsSection.js';
 
 class App {
   constructor() {
     this.layout = new Layout();
     this.hero = new Hero();
+    this.treatmentsSection = new TreatmentsSection();
     this.init();
   }
 
@@ -15,15 +17,14 @@ class App {
     // Set homepage content with Hero component
     this.layout.setMainContent(`
       <div id="hero-section"></div>
-      <div style="padding: 2rem; text-align: center;">
-        <h2>Additional Content Below Hero</h2>
-        <p>Other sections can be added here...</p>
-        <!-- TODO: Add AboutSection, TreatmentsSection, etc. -->
-      </div>
+      <div id="treatments-container"></div>
     `);
 
     // Mount the Hero component
     this.hero.mount('#hero-section');
+
+    // Mount the TreatmentsSection component
+    this.treatmentsSection.mount('#treatments-container');
   }
 
   destroy() {
