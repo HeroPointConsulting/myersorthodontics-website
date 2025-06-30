@@ -63,7 +63,7 @@
   padding: 0 1rem;
 }
 
-.process-steps-grid {
+.process-detailed-steps-grid {
   display: flex;
   flex-direction: column;
   gap: 3rem;
@@ -143,12 +143,12 @@
   justify-content: center;
 }
 
-.process-step-title {
+.process-page .process-step-title {
   font-family: var(--font-montserrat);
   font-weight: 700;
   font-size: 1.5rem;
   margin: 0;
-  color: #ffffff;
+  color: var(--color-primary-black);
 }
 
 .process-step-duration {
@@ -158,12 +158,12 @@
   color: #ffffff;
 }
 
-.process-step-description {
+.process-page .process-step-description {
   font-size: 1.125rem;
   opacity: 0.9;
   line-height: 1.6;
   margin: 0;
-  color: #ffffff;
+  color: var(--color-primary-black);
 }
 
 .process-step-details {

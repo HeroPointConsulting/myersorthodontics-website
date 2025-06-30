@@ -25,7 +25,7 @@ export function createProcessPage() {
       <!-- Process Steps -->
       <section class="process-steps-section">
         <div class="process-steps-container">
-          <div class="process-steps-grid">
+          <div class="process-detailed-steps-grid">
             ${detailedProcess.map((step, index) => `
               <div class="process-step-row ${index % 2 === 1 ? 'reverse' : ''}">
                 <div class="process-step-card">

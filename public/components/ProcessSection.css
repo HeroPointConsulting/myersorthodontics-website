@@ -54,28 +54,33 @@
   font-weight: 600;
 }
 
-.process-steps-grid {
-  display: grid;
+.process-section .process-steps-grid {
+  display: flex;
+  flex-direction: row;
   gap: 2rem;
   margin-bottom: 4rem;
-  grid-template-columns: 1fr;
-}
-
-@media (min-width: 768px) {
-  .process-steps-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 1024px) {
-  .process-steps-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 .process-step-item {
+  flex: 1;
   text-align: center;
   transition: all 300ms ease;
+  min-width: 0;
+}
+
+@media (max-width: 767px) {
+  .process-section .process-steps-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .process-step-item {
+    width: 100%;
+    max-width: 400px;
+    flex: none;
+  }
 }
 
 .process-step-circle {
@@ -86,34 +91,29 @@
   align-items: center;
   justify-content: center;
   margin: 0 auto 1rem auto;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  transition: all 300ms ease;
-}
-
-.process-step-item:hover .process-step-circle {
-  transform: scale(1.1);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-}
-
-.process-step-teal {
-  background-color: var(--color-accent-teal, #2d7d7d);
-}
-
-.process-step-lime {
-  background-color: var(--color-accent-lime-green, #c4d82f);
-}
-
-.process-step-magenta {
-  background-color: var(--color-accent-magenta, #e91e63);
-}
-
-.process-step-number {
-  color: var(--color-primary-white, #ffffff);
+  transition: transform 300ms ease;
+  color: #ffffff;
   font-size: 1.5rem;
   font-weight: bold;
 }
 
-.process-step-title {
+.process-step-item:hover .process-step-circle {
+  transform: scale(1.1);
+}
+
+.process-step-teal {
+  background-color: #2d7d7d;
+}
+
+.process-step-lime {
+  background-color: #c4d82f;
+}
+
+.process-step-magenta {
+  background-color: #e91e63;
+}
+
+.process-section .process-step-title {
   font-family: var(--font-montserrat, 'Montserrat', sans-serif);
   font-weight: bold;
   margin-bottom: 0.5rem;
@@ -310,11 +310,11 @@
     font-size: 1rem;
   }
   
-  .process-steps-grid {
+  .process-section .process-steps-grid {
     margin-bottom: 2.5rem;
   }
   
-  .process-step-circle {
+  .process-section .process-step-circle {
     width: 4rem;
     height: 4rem;
   }

@@ -55,9 +55,7 @@ export function createProcessSection() {
         <div class="process-steps-grid">
           ${steps.map(({ step, title, text, color, borderColor }) => `
             <div class="process-step-item">
-              <div class="process-step-circle ${color}">
-                <span class="process-step-number">${step}</span>
-              </div>
+              <div class="process-step-circle ${color}">${step}</div>
               <h3 class="process-step-title">
                 ${title}
               </h3>
