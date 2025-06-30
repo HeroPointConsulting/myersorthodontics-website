@@ -1,4 +1,5 @@
 import { siteData } from '../siteData.js';
+import { createLogo } from './Logo.js';
 
 export function createFooter() {
   const { contact } = siteData;
@@ -9,7 +10,12 @@ export function createFooter() {
         <!-- Main Footer Content -->
         <div class="footer-main">
           <div class="footer-tagline">
-            <p>Providing exceptional orthodontic care with modern techniques and personalized treatment plans.</p>
+            <div class="footer-brand">
+              <div class="footer-brand-identity">
+                ${createLogo('footer-logo')}
+                <h2 class="footer-brand-name">Myers Orthodontics</h2>
+              </div>
+            </div>
           </div>
           
           <div class="footer-grid">
