@@ -1,29 +1,23 @@
-import { Layout } from './components/Layout.js';
-import { Hero } from './components/Hero.js';
-import { TreatmentsSection } from './components/TreatmentsSection.js';
-import { AboutSection } from './components/AboutSection.js';
-import { ProcessSection } from './components/ProcessSection.js';
-import { TeamSection } from './components/TeamSection.js';
-import { TestimonialsSection } from './components/TestimonialsSection.js';
+import { createLayout, initLayout, setMainContent } from './components/Layout.js';
+import { createHero, initHero, destroyHero } from './components/Hero.js';
+import { createTreatmentsSection, initTreatmentsSection } from './components/TreatmentsSection.js';
+import { createAboutSection, initAboutSection } from './components/AboutSection.js';
+import { createProcessSection, initProcessSection } from './components/ProcessSection.js';
+import { createTeamSection, initTeamSection } from './components/TeamSection.js';
+import { createTestimonialsSection } from './components/TestimonialsSection.js';
 
 class App {
   constructor() {
-    this.layout = new Layout();
-    this.hero = new Hero();
-    this.treatmentsSection = new TreatmentsSection();
-    this.aboutSection = new AboutSection();
-    this.processSection = new ProcessSection();
-    this.teamSection = new TeamSection();
-    this.testimonialsSection = new TestimonialsSection();
     this.init();
   }
 
   init() {
     // Mount the layout
-    this.layout.mount('#app');
+    document.querySelector('#app').innerHTML = createLayout();
+    initLayout();
 
-    // Set homepage content with Hero component
-    this.layout.setMainContent(`
+    // Set homepage content
+    setMainContent(`
       <div id="hero-section"></div>
       <div id="about-container"></div>
       <div id="treatments-container"></div>
@@ -32,30 +26,25 @@ class App {
       <div id="testimonials-container"></div>
     `);
 
-    // Mount the Hero component
-    this.hero.mount('#hero-section');
+    // Mount all sections
+    document.getElementById('hero-section').innerHTML = createHero();
+    document.getElementById('about-container').innerHTML = createAboutSection();
+    document.getElementById('treatments-container').innerHTML = createTreatmentsSection();
+    document.getElementById('process-container').innerHTML = createProcessSection();
+    document.getElementById('team-container').innerHTML = createTeamSection();
+    document.getElementById('testimonials-container').innerHTML = createTestimonialsSection();
 
-    // Mount the TreatmentsSection component
-    this.treatmentsSection.mount('#treatments-container');
-
-    // Mount the AboutSection component
-    this.aboutSection.mount('#about-container');
-
-    // Mount the ProcessSection component
-    this.processSection.mount('#process-container');
-
-    // Mount the TeamSection component
-    this.teamSection.mount('#team-container');
-
-    // Mount the TestimonialsSection component
-    this.testimonialsSection.mount('#testimonials-container');
+    // Initialize interactive components
+    initHero();
+    initAboutSection();
+    initTreatmentsSection();
+    initProcessSection();
+    initTeamSection();
   }
 
   destroy() {
     // Clean up the hero component when needed
-    if (this.hero) {
-      this.hero.destroy();
-    }
+    destroyHero();
   }
 }
 

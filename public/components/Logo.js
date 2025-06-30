@@ -1,19 +1,8 @@
 // TODO: Logo component - matches original Logo.jsx
-export class Logo {
-  constructor(className = '') {
-    this.className = className;
-  }
-
-  render() {
-    return `
-      <a href="/" class="logo ${this.className}">
-        M&nbsp;|&nbsp;O
-      </a>
-    `;
-  }
-
-  mount(selector) {
-    const container = document.querySelector(selector);
-    container.innerHTML = this.render();
-  }
+export function createLogo(className = '') {
+  return `
+    <a href="/" class="logo ${className}">
+      M&nbsp;|&nbsp;O
+    </a>
+  `;
 }

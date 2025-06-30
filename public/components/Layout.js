@@ -1,37 +1,31 @@
-import { AnnouncementBar } from './AnnouncementBar.js';
-import { Navbar } from './Navbar.js';
-// import { Footer } from './Footer.js'; // TODO: Create Footer component
+import { createAnnouncementBar } from './AnnouncementBar.js';
+import { createNavbar, initNavbar } from './Navbar.js';
+// import { createFooter, initFooter } from './Footer.js'; // TODO: Create Footer component
 
-export class Layout {
-  constructor() {
-    this.announcementBar = new AnnouncementBar();
-    this.navbar = new Navbar();
-    // this.footer = new Footer(); // TODO: Uncomment when Footer is ready
-  }
+export function createLayout() {
+  return `
+    <div id="announcement-bar"></div>
+    <div id="navbar"></div>
+    <main id="main-content"></main>
+    <!-- <div id="footer"></div> --> <!-- TODO: Uncomment when Footer is ready -->
+  `;
+}
 
-  render() {
-    return `
-      <div id="announcement-bar"></div>
-      <div id="navbar"></div>
-      <main id="main-content"></main>
-      <!-- <div id="footer"></div> --> <!-- TODO: Uncomment when Footer is ready -->
-    `;
-  }
+export function initLayout() {
+  // Mount child components
+  document.getElementById('announcement-bar').innerHTML = createAnnouncementBar();
+  document.getElementById('navbar').innerHTML = createNavbar();
 
-  mount(selector) {
-    const container = document.querySelector(selector);
-    container.innerHTML = this.render();
+  // Initialize interactive components
+  initNavbar();
 
-    // Mount child components
-    this.announcementBar.mount('#announcement-bar');
-    this.navbar.mount('#navbar');
-    // this.footer.mount('#footer'); // TODO: Uncomment when Footer is ready
-  }
+  // TODO: Initialize footer when ready
+  // initFooter();
+}
 
-  setMainContent(content) {
-    const mainContent = document.querySelector('#main-content');
-    if (mainContent) {
-      mainContent.innerHTML = content;
-    }
+export function setMainContent(content) {
+  const mainContent = document.querySelector('#main-content');
+  if (mainContent) {
+    mainContent.innerHTML = content;
   }
 }
