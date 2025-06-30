@@ -1,3 +1,4 @@
+
 export class AboutSection {
   constructor() {
     this.mounted = false;
