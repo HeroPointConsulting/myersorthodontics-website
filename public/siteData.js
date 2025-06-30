@@ -145,7 +145,7 @@ export const siteData = {
     members: [
       {
         id: 1,
-        name: 'Dr. Sarah Myers',
+        name: 'Dr. Michael Myers',
         title: 'Lead Orthodontist',
         bio: 'Dr. Myers has over 15 years of experience in orthodontics and is passionate about creating beautiful, healthy smiles.',
         credentials: 'DDS, MS Orthodontics',
@@ -154,8 +154,8 @@ export const siteData = {
       },
       {
         id: 2,
-        name: 'Dr. Michael Chen',
-        title: 'Associate Orthodontist',
+        name: 'Dr. Kennedy Chen',
+        title: 'Lead Orthodontist',
         bio: 'Specializing in adult orthodontics and clear aligner therapy with a focus on aesthetic outcomes.',
         credentials: 'DDS, MS Orthodontics',
         image: '/api/placeholder/300/400',

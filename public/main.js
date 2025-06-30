@@ -3,6 +3,7 @@ import { Hero } from './components/Hero.js';
 import { TreatmentsSection } from './components/TreatmentsSection.js';
 import { AboutSection } from './components/AboutSection.js';
 import { ProcessSection } from './components/ProcessSection.js';
+import { TeamSection } from './components/TeamSection.js';
 
 class App {
   constructor() {
@@ -11,6 +12,7 @@ class App {
     this.treatmentsSection = new TreatmentsSection();
     this.aboutSection = new AboutSection();
     this.processSection = new ProcessSection();
+    this.teamSection = new TeamSection();
     this.init();
   }
 
@@ -24,6 +26,7 @@ class App {
       <div id="about-container"></div>
       <div id="treatments-container"></div>
       <div id="process-container"></div>
+      <div id="team-container"></div>
     `);
 
     // Mount the Hero component
@@ -37,6 +40,9 @@ class App {
 
     // Mount the ProcessSection component
     this.processSection.mount('#process-container');
+
+    // Mount the TeamSection component
+    this.teamSection.mount('#team-container');
   }
 
   destroy() {
