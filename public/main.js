@@ -6,6 +6,7 @@ import { createProcessSection, initProcessSection } from './components/ProcessSe
 import { createTeamSection, initTeamSection } from './components/TeamSection.js';
 import { createTestimonialsSection } from './components/TestimonialsSection.js';
 import { createFAQSection, initFAQSection } from './components/FAQSection.js';
+import { createNewsletterSection, initNewsletterSection } from './components/NewsletterSection.js';
 
 class App {
   constructor() {
@@ -26,6 +27,7 @@ class App {
       <div id="team-container"></div>
       <div id="testimonials-container"></div>
       <div id="faq-container"></div>
+      <div id="newsletter"></div>
     `);
 
     // Mount all sections
@@ -36,6 +38,7 @@ class App {
     document.getElementById('team-container').innerHTML = createTeamSection();
     document.getElementById('testimonials-container').innerHTML = createTestimonialsSection();
     document.getElementById('faq-container').innerHTML = createFAQSection();
+    document.getElementById('newsletter').innerHTML = createNewsletterSection();
 
     // Initialize interactive components
     initHero();
@@ -44,6 +47,7 @@ class App {
     initProcessSection();
     initTeamSection();
     initFAQSection();
+    initNewsletterSection();
   }
 
   destroy() {

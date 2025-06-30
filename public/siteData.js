@@ -23,6 +23,24 @@ export const siteData = {
       friday: '8:00 AM - 3:00 PM',
       saturday: 'By Appointment',
       sunday: 'Closed'
+    },
+    social: {
+      facebook: {
+        url: 'https://facebook.com/myersorthodontics',
+        label: 'Facebook'
+      },
+      instagram: {
+        url: 'https://instagram.com/myersorthodontics',
+        label: 'Instagram'
+      },
+      twitter: {
+        url: 'https://twitter.com/myersortho',
+        label: 'X (formerly Twitter)'
+      },
+      youtube: {
+        url: 'https://youtube.com/@myersorthodontics',
+        label: 'YouTube'
+      }
     }
   },
 

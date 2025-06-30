@@ -94,6 +94,5 @@ export function initNavbar() {
 
 function toggleMobileMenu() {
   isMobileMenuOpen = !isMobileMenuOpen;
-  console.log('Mobile menu toggled:', isMobileMenuOpen);
   // TODO: Show/hide MobileNav component when ready
 }

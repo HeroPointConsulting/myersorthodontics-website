@@ -90,7 +90,6 @@ export function initAboutSection() {
 
 function handlePlayClick() {
   // Placeholder for video/modal functionality
-  console.log('Play button clicked - implement video modal here');
   // You could integrate with a modal library or video player here
   alert('Video functionality would be implemented here');
 } 
