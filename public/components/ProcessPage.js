@@ -31,10 +31,7 @@ export function createProcessPage() {
                 <div class="process-step-card">
                   <div class="process-step-info ${step.bgColor}">
                     <div class="process-step-header">
-                      <div class="process-step-number-wrapper">
-                        <i data-lucide="circle" class="process-step-circle-icon"></i>
-                        <span class="process-step-number">${step.id}</span>
-                      </div>
+                      <div class="process-step-number-circle">${step.id}</div>
                       <div class="process-step-title-group">
                         <h3 class="process-step-title">${step.title}</h3>
                         <p class="process-step-duration">Duration: ${step.duration}</p>

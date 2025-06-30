@@ -109,20 +109,18 @@
 }
 
 .treatment-header.bg-accent-teal {
-  background-color: var(--color-accent-teal);
+  background: linear-gradient(135deg, var(--color-accent-teal) 0%, #1f6b6b 100%);
 }
 
 .treatment-header.bg-accent-lime-green {
-  background-color: var(--color-accent-lime-green);
+  background: linear-gradient(135deg, var(--color-accent-lime-green) 0%, #a8c01f 100%);
 }
 
 .treatment-header.bg-accent-magenta {
-  background-color: var(--color-accent-magenta);
+  background: linear-gradient(135deg, var(--color-accent-magenta) 0%, #c91653 100%);
 }
 
-.treatment-header.bg-accent-pink {
-  background-color: var(--color-accent-pink);
-}
+
 
 .treatment-name {
   font-family: var(--font-montserrat);
@@ -290,20 +288,18 @@
 }
 
 .process-step-number.bg-accent-teal {
-  background-color: var(--color-accent-teal);
+  background: linear-gradient(135deg, var(--color-accent-teal) 0%, #1f6b6b 100%);
 }
 
 .process-step-number.bg-accent-lime-green {
-  background-color: var(--color-accent-lime-green);
+  background: linear-gradient(135deg, var(--color-accent-lime-green) 0%, #a8c01f 100%);
 }
 
 .process-step-number.bg-accent-magenta {
-  background-color: var(--color-accent-magenta);
+  background: linear-gradient(135deg, var(--color-accent-magenta) 0%, #c91653 100%);
 }
 
-.process-step-number.bg-accent-pink {
-  background-color: var(--color-accent-pink);
-}
+
 
 .process-step-title {
   font-family: var(--font-montserrat);
@@ -343,9 +339,7 @@
   background-color: var(--color-accent-magenta);
 }
 
-.process-step-line.bg-accent-pink {
-  background-color: var(--color-accent-pink);
-}
+
 
 /* Hover effects for process steps */
 .process-step:hover .process-step-number {

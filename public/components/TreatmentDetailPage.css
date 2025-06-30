@@ -52,10 +52,6 @@
   background-color: var(--color-accent-magenta);
 }
 
-.treatment-hero.bg-accent-pink {
-  background-color: var(--color-accent-pink);
-}
-
 .treatment-hero-container {
   max-width: 1400px;
   margin: 0 auto;

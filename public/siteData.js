@@ -127,7 +127,7 @@ export const siteData = {
         description: 'Braces placed on the inside of teeth for complete invisibility.',
         features: ['Completely hidden', 'Custom-made', 'Effective results'],
         duration: '18-36 months',
-        color: 'bg-accent-pink',
+        color: 'bg-accent-magenta',
       },
     ],
     process: [
@@ -153,7 +153,7 @@ export const siteData = {
         step: 4,
         title: 'Retention Phase',
         description: 'Maintain your beautiful new smile with retainers',
-        color: 'bg-accent-pink'
+        color: 'bg-accent-magenta'
       }
     ],
     detailedProcess: [
@@ -214,8 +214,8 @@ export const siteData = {
           'Progress photos',
           'Next appointment scheduling'
         ],
-        color: 'process-step-pink',
-        bgColor: 'process-bg-pink'
+        color: 'process-step-magenta',
+        bgColor: 'process-bg-magenta'
       },
       {
         id: 5,
@@ -331,7 +331,7 @@ export const siteData = {
         title: 'Continuous Learning',
         description: 'We stay current with the latest advances in orthodontics to provide the best possible care.',
         icon: 'GraduationCap',
-        color: 'bg-accent-pink'
+        color: 'bg-accent-magenta'
       }
     ],
     education: [
@@ -475,7 +475,7 @@ export const siteData = {
         step: 4,
         title: 'Job Offer',
         description: 'If selected, we\'ll extend an offer and welcome you to the Myers Orthodontics family.',
-        color: 'bg-accent-pink'
+        color: 'bg-accent-magenta'
       }
     ]
   },
