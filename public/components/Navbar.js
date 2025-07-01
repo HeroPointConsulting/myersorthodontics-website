@@ -10,7 +10,7 @@ const navigationItems = [
   { name: 'Our Team', href: '/team' },
   { name: 'Careers', href: '/careers' },
   { name: 'Contact', href: '/contact' },
-  { name: 'Patient Portal', href: '/portal' },
+  { name: 'Patient Portal', href: '/patient-portal' },
 ];
 
 let isMobileMenuOpen = false;

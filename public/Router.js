@@ -16,6 +16,7 @@ import { createTeamPage, initTeamPage } from './components/TeamPage.js';
 import { createCareersPage, initCareersPage } from './components/CareersPage.js';
 import { createJobDetailPage, initJobDetailPage } from './components/JobDetailPage.js';
 import { createContactPage, initContactPage } from './components/ContactPage.js';
+import { createPatientPortalPage, initPatientPortalPage } from './components/PatientPortalPage.js';
 import { setMainContent } from './components/Layout.js';
 import { updateNavbarActiveState } from './components/Navbar.js';
 
@@ -31,6 +32,7 @@ class Router {
       '/team': this.renderTeamPage.bind(this),
       '/careers': this.renderCareersPage.bind(this),
       '/contact': this.renderContactPage.bind(this),
+      '/patient-portal': this.renderPatientPortalPage.bind(this),
       // Dynamic route for treatment details - handled in handleRoute
     };
 
@@ -231,6 +233,17 @@ class Router {
 
     // Initialize contact page
     initContactPage();
+  }
+
+  renderPatientPortalPage() {
+    // Clean up any existing content
+    this.cleanup();
+
+    // Set patient portal page content
+    setMainContent(createPatientPortalPage());
+
+    // Initialize patient portal page
+    initPatientPortalPage();
   }
 
   cleanup() {
