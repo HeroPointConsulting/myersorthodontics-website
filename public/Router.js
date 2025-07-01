@@ -10,6 +10,7 @@ import { createAboutPage, initAboutPage } from './components/AboutPage.js';
 import { createTreatmentsPage, initTreatmentsPage } from './components/TreatmentsPage.js';
 import { createTreatmentDetailPage, initTreatmentDetailPage } from './components/TreatmentDetailPage.js';
 import { createProcessPage, initProcessPage } from './components/ProcessPage.js';
+import { createSchedulePage, initSchedulePage } from './components/SchedulePage.js';
 import { setMainContent } from './components/Layout.js';
 import { updateNavbarActiveState } from './components/Navbar.js';
 
@@ -20,6 +21,7 @@ class Router {
       '/about': this.renderAboutPage.bind(this),
       '/treatments': this.renderTreatmentsPage.bind(this),
       '/process': this.renderProcessPage.bind(this),
+      '/schedule': this.renderSchedulePage.bind(this),
       // Dynamic route for treatment details - handled in handleRoute
     };
 
@@ -146,6 +148,17 @@ class Router {
 
     // Initialize process page
     initProcessPage();
+  }
+
+  renderSchedulePage() {
+    // Clean up any existing content
+    this.cleanup();
+
+    // Set schedule page content
+    setMainContent(createSchedulePage());
+
+    // Initialize schedule page
+    initSchedulePage();
   }
 
   cleanup() {
