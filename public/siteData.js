@@ -264,7 +264,7 @@ export const siteData = {
       },
       {
         id: 2,
-        name: 'Dr. Kennedy Chen',
+        name: 'Dr. Kennedy Myers',
         title: 'Lead Orthodontist',
         bio: 'Specializing in adult orthodontics and clear aligner therapy with a focus on aesthetic outcomes.',
         credentials: 'DDS, MS Orthodontics',

@@ -1,0 +1,352 @@
+/* Team Page Styles */
+.team-page {
+  font-family: var(--font-inter, 'Inter', sans-serif);
+}
+
+/* Hero Section */
+.team-hero {
+  background-color: var(--color-accent-teal);
+  padding: 5rem 0;
+}
+
+.team-hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.team-hero-content {
+  max-width: 48rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.team-hero-title {
+  font-family: var(--font-montserrat);
+  font-weight: 700;
+  font-size: 3rem;
+  color: var(--color-primary-white);
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.team-hero-subtitle {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.95);
+  line-height: 1.6;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .team-hero {
+    padding: 3rem 0;
+  }
+
+  .team-hero-title {
+    font-size: 2.25rem;
+  }
+
+  .team-hero-subtitle {
+    font-size: 1.125rem;
+  }
+}
+
+/* Team Grid */
+.team-grid-section {
+  padding: 4rem 0;
+  background: var(--color-primary-white, #ffffff);
+}
+
+.team-grid-container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.team-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .team-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Reuse styles from TeamSection for member cards */
+
+/* Team Values */
+.team-values-section {
+  padding: 4rem 0;
+  background: var(--color-primary-light-gray, #f3f4f6);
+}
+
+.team-values-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.team-values-header {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.team-values-title,
+.team-education-title {
+  font-family: var(--font-montserrat);
+  font-weight: 700;
+  font-size: 2rem;
+  color: var(--color-primary-black);
+  margin-bottom: 1rem;
+}
+
+.team-values-subtitle,
+.team-education-subtitle {
+  font-size: 1.125rem;
+  color: #6b7280;
+  max-width: 42rem;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.team-values-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .team-values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .team-values-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.team-value-card {
+  background: var(--color-primary-white);
+  padding: 2rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-value-card.hovered {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+}
+
+.team-value-icon {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem auto;
+}
+
+.team-value-icon .value-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  color: var(--color-primary-white);
+}
+
+.team-value-title {
+  font-family: var(--font-montserrat);
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-primary-black);
+}
+
+.team-value-description {
+  font-size: 0.875rem;
+  color: #6b7280;
+  line-height: 1.5;
+}
+
+/* Education Section */
+.team-education-section {
+  padding: 4rem 0;
+  background: var(--color-primary-white);
+}
+
+.team-education-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.team-education-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+  .team-education-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.education-list-title {
+  font-family: var(--font-montserrat);
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--color-primary-black);
+}
+
+.education-item {
+  display: flex;
+  gap: 1rem;
+}
+
+.education-icon {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.25rem;
+}
+
+.education-icon .check-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: var(--color-primary-white);
+}
+
+.education-item-title {
+  font-weight: 600;
+  color: var(--color-primary-black);
+  margin-bottom: 0.25rem;
+}
+
+.education-item-description {
+  font-size: 0.875rem;
+  color: #6b7280;
+  line-height: 1.5;
+}
+
+.education-image-wrapper {
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 10px 20px -5px rgba(0,0,0,0.15), 0 8px 10px -6px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 450px;
+  aspect-ratio: 1 / 1;
+  position: relative;
+}
+
+.education-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  inset: 0;
+}
+
+/* Utility Classes (limited use to this component) */
+.text-center {
+  text-align: center;
+}
+
+.flex {
+  display: flex;
+}
+
+.items-start {
+  align-items: flex-start;
+}
+
+.space-y-6 {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* 24px */
+}
+
+/* Override member card alignment for TeamPage */
+.team-page .team-member-card {
+  text-align: left;
+}
+
+.team-page .team-member-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.team-page .team-member-icon {
+  width: 3rem;
+  height: 3rem;
+}
+
+.team-page .team-member-image-wrapper {
+  height: 250px;
+  overflow: hidden;
+}
+
+.team-page .team-member-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.team-education-header {
+  text-align: center;
+}
+
+/* member media */
+.team-page .team-member-media {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+}
+
+.team-page .team-member-icon-wrapper {
+  height: 100%;
+}
+
+/* Accent background helpers */
+.bg-accent-lime-green {
+  background-color: var(--color-accent-lime-green);
+}
+
+.bg-accent-magenta {
+  background-color: var(--color-accent-magenta);
+}
+
+/* Border accent helpers */
+.border-accent-teal { border-top: 4px solid var(--color-accent-teal); }
+.border-accent-lime-green { border-top: 4px solid var(--color-accent-lime-green); }
+.border-accent-magenta { border-top: 4px solid var(--color-accent-magenta); }
+
+/* Icon default color */
+.team-page .team-member-icon {
+  color: var(--color-accent-teal);
+  stroke-width: 1.5;
+}
+
+/* Remove previous white override if any - ensure background is transparent */
+.team-page .team-member-icon-wrapper {
+  background: transparent;
+} 
