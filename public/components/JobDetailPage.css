@@ -1,0 +1,236 @@
+/* Job Detail Page Styles */
+.job-detail-page {
+  min-height: 100vh;
+  background-color: var(--color-primary-white);
+}
+
+.job-detail-nav {
+  background-color: var(--color-primary-light-gray);
+  padding: 1rem;
+}
+
+.job-back-link {
+  font-size: 0.95rem;
+  color: var(--color-accent-teal);
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  transition: color 0.2s ease;
+}
+.job-back-link:hover {
+  color: var(--color-accent-lime-green);
+}
+
+/* Hero */
+.job-hero {
+  padding: 5rem 0;
+  background-color: var(--color-accent-teal);
+  color: var(--color-primary-white);
+}
+
+.job-hero-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.job-hero-title {
+  font-family: var(--font-montserrat);
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+@media (min-width: 768px) { .job-hero-title { font-size: 2.5rem; } }
+
+/* Remove unused meta and button styles (optional left as is) */
+
+/* Hero details grid */
+.job-hero-details-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+@media (min-width: 768px) { .job-hero-details-grid { grid-template-columns: repeat(2,1fr); } }
+
+.job-hero-details-grid ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.job-hero-details-grid li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.95);
+}
+
+.job-hero-subtitle {
+  font-family: var(--font-montserrat);
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-primary-white);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Details Section */
+.job-details-section {
+  padding: 4rem 0;
+  background-color: var(--color-primary-white);
+}
+
+.job-details-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.job-details-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+@media (min-width: 768px) { .job-details-grid { grid-template-columns: repeat(2, 1fr); } }
+
+.job-section-title {
+  font-family: var(--font-montserrat);
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+  color: var(--color-primary-black);
+}
+
+.job-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.job-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  color: #374151;
+  font-size: 0.95rem;
+}
+
+/* Not Found */
+.job-not-found-container {
+  padding: 4rem 1rem;
+}
+
+.job-not-found-container h1 {
+  font-family: var(--font-montserrat);
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Application Form Section */
+.job-apply-section {
+  padding: 4rem 0;
+  background-color: var(--color-primary-white);
+}
+
+.job-apply-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.job-apply-title {
+  font-family: var(--font-montserrat);
+  font-weight: 700;
+  font-size: 1.75rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--color-primary-black);
+}
+
+.job-apply-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.job-form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+@media (min-width: 640px) { .job-form-grid { grid-template-columns: repeat(2, 1fr); } }
+
+.job-apply-form input[type="text"],
+.job-apply-form input[type="email"],
+.job-apply-form input[type="tel"],
+.job-apply-form input[type="file"],
+.job-apply-form textarea {
+  padding: 0.75rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  font-size: 0.95rem;
+}
+
+.job-apply-form select {
+  padding: 0.75rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  font-size: 0.95rem;
+  background-color: #fff;
+}
+
+.job-apply-submit {
+  align-self: flex-start;
+  color: var(--color-primary-white);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+.job-apply-submit:hover {
+  background-color: var(--color-accent-lime-green);
+}
+
+.job-apply-success {
+  margin-top: 2rem;
+  text-align: center;
+  font-weight: 600;
+  color: var(--color-accent-teal);
+}
+
+.job-file-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.job-file-label {
+  font-family: var(--font-montserrat);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.job-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.job-input-label {
+  font-family: var(--font-montserrat);
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--color-primary-black);
+} 

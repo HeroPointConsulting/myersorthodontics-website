@@ -13,6 +13,8 @@ import { createProcessPage, initProcessPage } from './components/ProcessPage.js'
 import { createSchedulePage, initSchedulePage } from './components/SchedulePage.js';
 import { createReviewsPage, initReviewsPage } from './components/ReviewsPage.js';
 import { createTeamPage, initTeamPage } from './components/TeamPage.js';
+import { createCareersPage, initCareersPage } from './components/CareersPage.js';
+import { createJobDetailPage, initJobDetailPage } from './components/JobDetailPage.js';
 import { setMainContent } from './components/Layout.js';
 import { updateNavbarActiveState } from './components/Navbar.js';
 
@@ -26,6 +28,7 @@ class Router {
       '/schedule': this.renderSchedulePage.bind(this),
       '/reviews': this.renderReviewsPage.bind(this),
       '/team': this.renderTeamPage.bind(this),
+      '/careers': this.renderCareersPage.bind(this),
       // Dynamic route for treatment details - handled in handleRoute
     };
 
@@ -58,6 +61,14 @@ class Router {
     if (path.startsWith('/treatments/') && path !== '/treatments') {
       const slug = path.split('/treatments/')[1];
       this.renderTreatmentDetailPage(slug);
+      updateNavbarActiveState();
+      return;
+    }
+
+    // Check for dynamic career/job detail route
+    if (path.startsWith('/careers/') && path !== '/careers') {
+      const slug = path.split('/careers/')[1];
+      this.renderJobDetailPage(slug);
       updateNavbarActiveState();
       return;
     }
@@ -185,6 +196,28 @@ class Router {
 
     // Initialize team page
     initTeamPage();
+  }
+
+  renderCareersPage() {
+    // Clean up any existing content
+    this.cleanup();
+
+    // Set careers page content
+    setMainContent(createCareersPage());
+
+    // Initialize careers page
+    initCareersPage();
+  }
+
+  renderJobDetailPage(slug) {
+    // Clean up any existing content
+    this.cleanup();
+
+    // Set job detail page content
+    setMainContent(createJobDetailPage(slug));
+
+    // Initialize job detail page
+    initJobDetailPage();
   }
 
   cleanup() {
