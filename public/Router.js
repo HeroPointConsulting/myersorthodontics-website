@@ -15,6 +15,7 @@ import { createReviewsPage, initReviewsPage } from './components/ReviewsPage.js'
 import { createTeamPage, initTeamPage } from './components/TeamPage.js';
 import { createCareersPage, initCareersPage } from './components/CareersPage.js';
 import { createJobDetailPage, initJobDetailPage } from './components/JobDetailPage.js';
+import { createContactPage, initContactPage } from './components/ContactPage.js';
 import { setMainContent } from './components/Layout.js';
 import { updateNavbarActiveState } from './components/Navbar.js';
 
@@ -29,6 +30,7 @@ class Router {
       '/reviews': this.renderReviewsPage.bind(this),
       '/team': this.renderTeamPage.bind(this),
       '/careers': this.renderCareersPage.bind(this),
+      '/contact': this.renderContactPage.bind(this),
       // Dynamic route for treatment details - handled in handleRoute
     };
 
@@ -218,6 +220,17 @@ class Router {
 
     // Initialize job detail page
     initJobDetailPage();
+  }
+
+  renderContactPage() {
+    // Clean up any existing content
+    this.cleanup();
+
+    // Set contact page content
+    setMainContent(createContactPage());
+
+    // Initialize contact page
+    initContactPage();
   }
 
   cleanup() {
