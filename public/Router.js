@@ -11,6 +11,7 @@ import { createTreatmentsPage, initTreatmentsPage } from './components/Treatment
 import { createTreatmentDetailPage, initTreatmentDetailPage } from './components/TreatmentDetailPage.js';
 import { createProcessPage, initProcessPage } from './components/ProcessPage.js';
 import { createSchedulePage, initSchedulePage } from './components/SchedulePage.js';
+import { createReviewsPage, initReviewsPage } from './components/ReviewsPage.js';
 import { setMainContent } from './components/Layout.js';
 import { updateNavbarActiveState } from './components/Navbar.js';
 
@@ -22,6 +23,7 @@ class Router {
       '/treatments': this.renderTreatmentsPage.bind(this),
       '/process': this.renderProcessPage.bind(this),
       '/schedule': this.renderSchedulePage.bind(this),
+      '/reviews': this.renderReviewsPage.bind(this),
       // Dynamic route for treatment details - handled in handleRoute
     };
 
@@ -159,6 +161,17 @@ class Router {
 
     // Initialize schedule page
     initSchedulePage();
+  }
+
+  renderReviewsPage() {
+    // Clean up any existing content
+    this.cleanup();
+
+    // Set reviews page content
+    setMainContent(createReviewsPage());
+
+    // Initialize reviews page
+    initReviewsPage();
   }
 
   cleanup() {
