@@ -17,6 +17,7 @@ import { createCareersPage, initCareersPage } from './components/CareersPage.js'
 import { createJobDetailPage, initJobDetailPage } from './components/JobDetailPage.js';
 import { createContactPage, initContactPage } from './components/ContactPage.js';
 import { createPatientPortalPage, initPatientPortalPage } from './components/PatientPortalPage.js';
+import { createReferralsPage, initReferralsPage } from './components/ReferralsPage.js';
 import { setMainContent } from './components/Layout.js';
 import { updateNavbarActiveState } from './components/Navbar.js';
 
@@ -33,6 +34,8 @@ class Router {
       '/careers': this.renderCareersPage.bind(this),
       '/contact': this.renderContactPage.bind(this),
       '/patient-portal': this.renderPatientPortalPage.bind(this),
+      '/referrals': this.renderReferralsPage.bind(this),
+      '/referral': this.renderReferralsPage.bind(this),
       // Dynamic route for treatment details - handled in handleRoute
     };
 
@@ -244,6 +247,17 @@ class Router {
 
     // Initialize patient portal page
     initPatientPortalPage();
+  }
+
+  renderReferralsPage() {
+    // Clean up any existing content
+    this.cleanup();
+
+    // Set referrals page content
+    setMainContent(createReferralsPage());
+
+    // Initialize referrals page
+    initReferralsPage();
   }
 
   cleanup() {

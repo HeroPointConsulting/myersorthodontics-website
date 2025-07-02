@@ -1,0 +1,467 @@
+/* Referral Form Section - Main Container */
+.referral-form-section {
+  padding: 60px 0 200px 0;
+  background: var(--color-primary-white);
+}
+
+.referral-form-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.referral-form-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.referral-form-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-primary-black);
+  margin-bottom: 1rem;
+}
+
+.referral-form-description {
+  font-size: 1.125rem;
+  color: #666;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.referral-form-content {
+  display: block;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Form Styles */
+.referral-form {
+  background: #f8f9fa;
+  border-radius: 0.5rem;
+  padding: 2rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  border: 1px solid #e5e7eb;
+}
+
+.referral-form-group {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #eee;
+}
+
+.referral-form-group:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.referral-form-group-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-primary-black);
+  margin-bottom: 1.5rem;
+}
+
+.referral-form-group-icon {
+  width: 24px;
+  height: 24px;
+  color: var(--color-accent-teal);
+}
+
+.referral-form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.referral-form-group {
+  position: relative;
+}
+
+.referral-form-label {
+  display: block;
+  font-weight: 600;
+  color: var(--color-primary-black);
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.referral-form-input,
+.referral-form-select,
+.referral-form-textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  font-size: 1rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  background: var(--color-primary-white);
+}
+
+.referral-form-input:focus,
+.referral-form-select:focus,
+.referral-form-textarea:focus {
+  outline: none;
+  border-color: var(--color-accent-teal);
+  box-shadow: 0 0 0 2px rgba(45, 125, 125, 0.1);
+}
+
+.referral-form-input.error,
+.referral-form-select.error,
+.referral-form-textarea.error {
+  border-color: #dc3545;
+  box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.1);
+}
+
+.referral-form-error {
+  display: block;
+  color: #dc3545;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+  font-weight: 500;
+}
+
+.referral-form-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Submit Actions */
+.referral-form-actions {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid #eee;
+}
+
+.referral-form-submit {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--color-accent-teal);
+  color: var(--color-primary-white);
+  border: none;
+  padding: 0.875rem 2rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  text-decoration: none;
+}
+
+.referral-form-submit:hover:not(:disabled) {
+  background: #1d5555;
+}
+
+.referral-form-submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.referral-form-submit-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.referral-form-privacy {
+  margin-top: 1.5rem;
+  font-size: 0.875rem;
+  color: #666;
+  line-height: 1.5;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Alternative Contact Methods */
+.referral-alternative-methods {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  background: #f8f9fa;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+}
+
+.referral-alternative-method {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.referral-alternative-method strong {
+  color: var(--color-primary-black);
+  font-size: 0.9rem;
+}
+
+.referral-phone-link,
+.referral-email-link {
+  color: var(--color-accent-teal);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.referral-phone-link:hover,
+.referral-email-link:hover {
+  text-decoration: underline;
+}
+
+/* Success Modal */
+.referral-success-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: modalFadeIn 0.3s ease-out;
+}
+
+.referral-success-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+}
+
+.referral-success-content {
+  position: relative;
+  background: var(--color-primary-white);
+  border-radius: 0.5rem;
+  padding: 3rem;
+  max-width: 500px;
+  margin: 2rem;
+  text-align: center;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+  animation: modalSlideIn 0.3s ease-out;
+}
+
+.referral-success-icon {
+  width: 80px;
+  height: 80px;
+  background: var(--color-accent-lime-green);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 2rem;
+  color: var(--color-primary-white);
+}
+
+.referral-success-icon i {
+  width: 40px;
+  height: 40px;
+}
+
+.referral-success-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-primary-black);
+  margin-bottom: 1rem;
+}
+
+.referral-success-message {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.referral-success-close {
+  background: var(--color-accent-teal);
+  color: var(--color-primary-white);
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.referral-success-close:hover {
+  background: #245f5f;
+  transform: translateY(-1px);
+}
+
+/* Contact Section in Main Page */
+.referral-contact {
+  padding: 60px 0;
+  background: var(--color-primary-white);
+}
+
+.referral-contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.referral-contact-content {
+  background: #f8f9fa;
+  border-radius: 0.5rem;
+  padding: 3rem;
+  text-align: center;
+}
+
+.referral-contact-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-primary-black);
+  margin-bottom: 1rem;
+}
+
+.referral-contact-description {
+  font-size: 1.25rem;
+  color: #666;
+  margin-bottom: 3rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.referral-contact-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.referral-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-align: left;
+}
+
+.referral-contact-icon {
+  width: 48px;
+  height: 48px;
+  background: var(--color-accent-teal);
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary-white);
+  flex-shrink: 0;
+}
+
+.referral-contact-details {
+  flex: 1;
+}
+
+.referral-contact-label {
+  font-weight: 600;
+  color: var(--color-primary-black);
+  margin-bottom: 0.25rem;
+  font-size: 0.9rem;
+}
+
+.referral-contact-value {
+  color: var(--color-accent-teal);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.referral-contact-value:hover {
+  text-decoration: underline;
+}
+
+/* Animations */
+@keyframes modalFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes modalSlideIn {
+  from { 
+    opacity: 0; 
+    transform: translateY(-30px) scale(0.95); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0) scale(1); 
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .referral-form-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .referral-alternative-methods {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .referral-form-section {
+    padding: 40px 0 150px 0;
+  }
+  
+  .referral-form-container {
+    padding: 0 1rem;
+  }
+  
+  .referral-form-title {
+    font-size: 2rem;
+  }
+  
+  .referral-form-description {
+    font-size: 1rem;
+  }
+  
+  .referral-form {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .referral-form-title {
+    font-size: 2rem;
+  }
+  
+  .referral-form {
+    padding: 1.5rem;
+  }
+  
+  .referral-form-group-title {
+    font-size: 1.25rem;
+  }
+  
+  .referral-form-submit {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+  
+  .referral-success-content {
+    padding: 2rem;
+    margin: 1rem;
+  }
+  
+  .referral-success-title {
+    font-size: 1.5rem;
+  }
+} 

@@ -1,0 +1,365 @@
+/* Why Refer Section */
+.why-refer-section {
+  padding: 80px 0;
+  background: var(--color-primary-white);
+}
+
+.why-refer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.why-refer-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.why-refer-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--color-primary-black);
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.why-refer-description {
+  font-size: 1.25rem;
+  color: #666;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Benefits Grid */
+.why-refer-benefits {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-bottom: 5rem;
+}
+
+.why-refer-benefit {
+  background: var(--color-primary-white);
+  border-radius: 0.5rem;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.why-refer-benefit.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.why-refer-benefit:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.why-refer-benefit-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  color: var(--color-primary-white);
+}
+
+.why-refer-benefit-icon i {
+  width: 32px;
+  height: 32px;
+}
+
+.why-refer-benefit-content {
+  flex: 1;
+}
+
+.why-refer-benefit-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-primary-black);
+  margin-bottom: 1rem;
+}
+
+.why-refer-benefit-description {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Process Overview */
+.why-refer-process {
+  background: #f8f9fa;
+  border-radius: 0.5rem;
+  padding: 3rem;
+  margin-bottom: 5rem;
+}
+
+.why-refer-process-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-primary-black);
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.why-refer-process-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.why-refer-step {
+  text-align: center;
+  position: relative;
+}
+
+.why-refer-step-number {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-primary-white);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.why-refer-step-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-primary-black);
+  margin-bottom: 1rem;
+}
+
+.why-refer-step-description {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Testimonials */
+.why-refer-testimonials {
+  margin-bottom: 2rem;
+}
+
+.why-refer-testimonials-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-primary-black);
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.why-refer-testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.why-refer-testimonial {
+  background: var(--color-primary-white);
+  border-radius: 0.5rem;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.why-refer-testimonial:nth-child(3n+1)::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--color-accent-teal);
+}
+
+.why-refer-testimonial:nth-child(3n+2)::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--color-accent-lime-green);
+}
+
+.why-refer-testimonial:nth-child(3n+3)::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--color-accent-magenta);
+}
+
+.why-refer-testimonial:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.why-refer-testimonial-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.why-refer-testimonial-quote {
+  flex: 1;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.why-refer-testimonial-quote-icon {
+  width: 24px;
+  height: 24px;
+  color: var(--color-accent-teal);
+  margin-bottom: 1rem;
+}
+
+.why-refer-testimonial-text {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: #333;
+  font-style: italic;
+}
+
+.why-refer-testimonial-author {
+  border-top: 1px solid #eee;
+  padding-top: 1rem;
+}
+
+.why-refer-testimonial-name {
+  font-weight: 600;
+  color: var(--color-primary-black);
+  margin-bottom: 0.25rem;
+}
+
+.why-refer-testimonial-practice {
+  color: var(--color-accent-teal);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Utility Classes for Background Colors */
+.bg-accent-teal {
+  background-color: var(--color-accent-teal);
+}
+
+.bg-accent-lime-green {
+  background-color: var(--color-accent-lime-green);
+}
+
+.bg-accent-magenta {
+  background-color: var(--color-accent-magenta);
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .why-refer-benefits {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  
+  .why-refer-process-steps {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .why-refer-section {
+    padding: 60px 0;
+  }
+  
+  .why-refer-container {
+    padding: 0 1rem;
+  }
+  
+  .why-refer-title {
+    font-size: 2.5rem;
+  }
+  
+  .why-refer-description {
+    font-size: 1.125rem;
+  }
+  
+  .why-refer-benefits {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+  
+  .why-refer-benefit {
+    padding: 1.5rem;
+  }
+  
+  .why-refer-process {
+    padding: 2rem;
+    margin-bottom: 3rem;
+  }
+  
+  .why-refer-process-title {
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+  }
+  
+  .why-refer-testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .why-refer-testimonial {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .why-refer-title {
+    font-size: 2rem;
+  }
+  
+  .why-refer-process-title {
+    font-size: 1.5rem;
+  }
+  
+  .why-refer-testimonials-title {
+    font-size: 1.75rem;
+  }
+  
+  .why-refer-benefit-icon {
+    width: 56px;
+    height: 56px;
+  }
+  
+  .why-refer-benefit-icon i {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .why-refer-step-number {
+    width: 56px;
+    height: 56px;
+    font-size: 1.25rem;
+  }
+} 
