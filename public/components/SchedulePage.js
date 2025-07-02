@@ -10,12 +10,12 @@ export function createSchedulePage() {
         <div class="schedule-hero-container">
           <div class="schedule-hero-content">
             <h1 class="schedule-hero-title">
-              Schedule Your Consultation
+              Schedule Your Appointment
             </h1>
             <p class="schedule-hero-description">
-              Take the first step toward your perfect smile. Schedule your
-              complimentary consultation and discover how orthodontic treatment
-              can transform your confidence and oral health.
+              Ready to start or continue your orthodontic journey? Request your
+              appointment today and let our expert team help you achieve
+              optimal oral health and a confident smile.
             </p>
           </div>
         </div>
@@ -29,7 +29,7 @@ export function createSchedulePage() {
             <div class="schedule-form-wrapper">
               <div class="schedule-form-card">
                 <h2 class="schedule-form-title">
-                  Request Your Appointment
+                  Schedule Your Visit
                 </h2>
 
                 <form id="appointment-form" class="schedule-form">
@@ -143,12 +143,12 @@ export function createSchedulePage() {
                       name="message"
                       rows="4"
                       class="form-textarea"
-                      placeholder="Tell us about your orthodontic concerns or questions..."
+                      placeholder="Tell us about your orthodontic needs, questions, or any specific concerns..."
                     ></textarea>
                   </div>
 
                   <button type="submit" class="form-submit-btn">
-                    Request Appointment
+                    Schedule Appointment
                   </button>
                 </form>
               </div>
@@ -199,7 +199,7 @@ export function createSchedulePage() {
                         ${contact.email.main}
                       </p>
                       <p class="schedule-contact-description">
-                        We'll respond within 24 hours
+                        We'll respond within 1 business day
                       </p>
                     </div>
                   </div>
@@ -232,8 +232,8 @@ export function createSchedulePage() {
 
                 <div class="schedule-hours-note">
                   <p class="schedule-hours-note-text">
-                    Emergency appointments available 24/7. Call our main
-                    number for urgent dental needs.
+                    <strong>Same-day appointments often available!</strong><br>
+                    Call us for urgent orthodontic needs or last-minute scheduling.
                   </p>
                 </div>
               </div>
@@ -247,11 +247,11 @@ export function createSchedulePage() {
         <div class="schedule-expectations-container">
           <div class="schedule-expectations-header">
             <h2 class="schedule-expectations-title">
-              What to Expect at Your First Visit
+              What to Expect at Your Visit
             </h2>
             <p class="schedule-expectations-description">
-              Your initial consultation is comprehensive and designed to make
-              you feel comfortable and informed.
+              Whether it's your first visit or a follow-up appointment, we ensure 
+              every visit is thorough, comfortable, and informative.
             </p>
           </div>
 
@@ -281,7 +281,7 @@ export function initSchedulePage() {
   // Handle form submission
   const form = document.getElementById('appointment-form');
   if (form) {
-    form.addEventListener('submit', function (e) {
+    form.addEventListener('submit', async function (e) {
       e.preventDefault();
 
       // Get form data
@@ -291,14 +291,31 @@ export function initSchedulePage() {
         appointmentData[key] = value;
       }
 
-      // Log the form data (in a real app, this would be sent to a server)
-      console.log('Appointment request submitted:', appointmentData);
+      try {
+        // Submit to API
+        const response = await fetch('/api/schedule', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(appointmentData),
+        });
 
-      // Show success message
-      alert('Thank you for your appointment request! We will contact you within 24 hours to confirm your appointment.');
+        const result = await response.json();
 
-      // Reset form
-      form.reset();
+        if (result.success) {
+          // Show success message
+          alert('Thank you for scheduling your appointment! Our team will contact you within 1 business day to confirm your visit.');
+          // Reset form
+          form.reset();
+        } else {
+          throw new Error(result.message || 'Failed to schedule appointment');
+        }
+      } catch (error) {
+        console.error('Schedule form error:', error);
+        // Show error message
+        alert('Sorry, there was an error scheduling your appointment. Please call us directly at (317) 289-1750 and we\'ll get you scheduled right away!');
+      }
     });
   }
 } 

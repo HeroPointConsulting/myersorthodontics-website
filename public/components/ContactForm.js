@@ -11,7 +11,7 @@ export function createContactForm() {
             Send Us a Message
           </h2>
           <p class="contact-form-description">
-            Ready to start your orthodontic journey? Fill out the form below and we'll get back to you within 24 hours.
+            Ready to start your orthodontic journey? Fill out the form below and we'll get back to you within 1 business day.
           </p>
         </div>
 
@@ -117,7 +117,7 @@ export function createContactForm() {
                 <i data-lucide="check-circle" class="contact-form-success-icon"></i>
                 <h3 class="contact-form-success-title">Message Sent Successfully!</h3>
                 <p class="contact-form-success-text">
-                  Thank you for contacting us. We'll get back to you within 24 hours.
+                  Thank you for contacting us. We'll get back to you within 1 business day.
                 </p>
               </div>
             </div>
@@ -214,18 +214,29 @@ export function initContactForm() {
       const data = Object.fromEntries(formData.entries());
 
       try {
-        // Simulate API call
-        await new Promise(resolve => setTimeout(resolve, 2000));
+        // Submit to API
+        const response = await fetch('/api/contact', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data),
+        });
 
-        // Show success message
-        successMessage.style.display = 'block';
-        form.reset();
+        const result = await response.json();
 
-        // Scroll to success message
-        successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        if (result.success) {
+          // Show success message
+          successMessage.style.display = 'block';
+          form.reset();
 
-        console.log('Form submitted:', data);
+          // Scroll to success message
+          successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } else {
+          throw new Error(result.message || 'Failed to send message');
+        }
       } catch (error) {
+        console.error('Contact form error:', error);
         // Show error message
         errorMessage.style.display = 'block';
         errorMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });

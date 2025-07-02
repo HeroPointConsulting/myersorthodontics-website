@@ -277,7 +277,7 @@ export function initReferralForm() {
   addReferralFormValidation();
 }
 
-function handleReferralSubmit(e) {
+async function handleReferralSubmit(e) {
   e.preventDefault();
 
   const submitBtn = document.getElementById('referral-submit-btn');
@@ -287,23 +287,44 @@ function handleReferralSubmit(e) {
   submitBtn.disabled = true;
   submitBtn.innerHTML = '<i data-lucide="loader-2" class="animate-spin"></i> Submitting...';
 
-  // Simulate form submission (replace with actual API call)
-  setTimeout(() => {
+  try {
+    // Get form data
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+
+    // Submit to API
+    const response = await fetch('/api/referral', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+
+    const result = await response.json();
+
+    if (result.success) {
+      // Show success message
+      showReferralSuccess();
+      // Reset form
+      form.reset();
+    } else {
+      throw new Error(result.message || 'Failed to submit referral');
+    }
+  } catch (error) {
+    console.error('Referral form error:', error);
+    // Show error message
+    alert('Sorry, there was an error submitting the referral. Please call us directly at (317) 289-1750.');
+  } finally {
     // Reset button
     submitBtn.disabled = false;
     submitBtn.innerHTML = '<i data-lucide="send"></i> Submit Referral';
-
-    // Show success message
-    showReferralSuccess();
-
-    // Reset form
-    form.reset();
 
     // Re-initialize icons
     if (typeof lucide !== 'undefined') {
       lucide.createIcons();
     }
-  }, 2000);
+  }
 }
 
 function showReferralSuccess() {
@@ -318,7 +339,7 @@ function showReferralSuccess() {
       </div>
       <h3 class="referral-success-title">Referral Submitted Successfully!</h3>
       <p class="referral-success-message">
-        Thank you for your referral. We will contact the patient within 24 hours 
+        Thank you for your referral. We will contact the patient within 1 business day 
         to schedule their consultation and send you a confirmation.
       </p>
       <button class="referral-success-close" onclick="this.closest('.referral-success-modal').remove()">

@@ -89,7 +89,7 @@ export function createWhyReferSection() {
             <div class="why-refer-step">
               <div class="why-refer-step-number bg-accent-lime-green">2</div>
               <h4 class="why-refer-step-title">Rapid Response</h4>
-              <p class="why-refer-step-description">We contact the patient within 24 hours to schedule their consultation.</p>
+              <p class="why-refer-step-description">We contact the patient within 1 business day to schedule their consultation.</p>
             </div>
             <div class="why-refer-step">
               <div class="why-refer-step-number bg-accent-magenta">3</div>

@@ -20,6 +20,6 @@
 }
 
 .announcement-bar a:hover {
-  color: var(--color-accent-lime-green);
+  color: var(--color-accent-white);
   text-decoration: underline;
 } 
