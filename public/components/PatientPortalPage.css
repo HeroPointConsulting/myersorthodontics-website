@@ -7,6 +7,25 @@
 #create-account-modal {
   display: none;
   visibility: hidden;
+  backdrop-filter: blur(8px);
+  background-color: rgba(0, 0, 0, 0.5);
+  animation: fadeIn 0.2s ease-out;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 50;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+/* Show modals when not hidden */
+#forgot-password-modal:not(.hidden),
+#create-account-modal:not(.hidden) {
+  display: flex;
+  visibility: visible;
 }
 
 /* Hero Section */
@@ -427,24 +446,7 @@
   border-top: 1px solid #e5e7eb;
 }
 
-/* Modal styling */
-#forgot-password-modal,
-#create-account-modal {
-  backdrop-filter: blur(8px);
-  background-color: rgba(0, 0, 0, 0.5);
-  animation: fadeIn 0.2s ease-out;
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 50;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem;
-}
-
+/* Modal styling - hidden state */
 #forgot-password-modal.hidden,
 #create-account-modal.hidden {
   display: none;

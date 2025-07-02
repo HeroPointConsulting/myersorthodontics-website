@@ -485,207 +485,208 @@ export function createPatientPortalPage() {
 }
 
 export function initPatientPortalPage() {
-  // Immediately ensure modals are hidden
-  setTimeout(() => {
-    const forgotModal = document.getElementById('forgot-password-modal');
-    const createModal = document.getElementById('create-account-modal');
-    if (forgotModal) forgotModal.classList.add('hidden');
-    if (createModal) createModal.classList.add('hidden');
-  }, 0);
+  // Ensure DOM is ready before initializing
+  const initializeModals = () => {
+    // Get DOM elements
+    const loginFormEl = document.getElementById('login-form');
+    const forgotPasswordBtn = document.getElementById('forgot-password-btn');
+    const createAccountBtn = document.getElementById('create-account-btn');
+    const forgotPasswordModal = document.getElementById('forgot-password-modal');
+    const createAccountModal = document.getElementById('create-account-modal');
+    const closeForgotPassword = document.getElementById('close-forgot-password');
+    const closeCreateAccount = document.getElementById('close-create-account');
+    const cancelForgotPassword = document.getElementById('cancel-forgot-password');
+    const cancelCreateAccount = document.getElementById('cancel-create-account');
+    const forgotPasswordFormEl = document.getElementById('forgot-password-form');
+    const createAccountFormEl = document.getElementById('create-account-form');
+    const watchTutorialBtn = document.getElementById('watch-tutorial-btn');
 
-  // State management
-  let isLoggedIn = false;
-  let loginForm = { email: '', password: '' };
-  let forgotPasswordForm = { email: '' };
-  let createAccountForm = {
-    accountNumber: '',
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    dateOfBirth: '',
-    password: '',
-    confirmPassword: ''
-  };
-
-  // Get DOM elements
-  const loginFormEl = document.getElementById('login-form');
-  const forgotPasswordBtn = document.getElementById('forgot-password-btn');
-  const createAccountBtn = document.getElementById('create-account-btn');
-  const forgotPasswordModal = document.getElementById('forgot-password-modal');
-  const createAccountModal = document.getElementById('create-account-modal');
-  const closeForgotPassword = document.getElementById('close-forgot-password');
-  const closeCreateAccount = document.getElementById('close-create-account');
-  const cancelForgotPassword = document.getElementById('cancel-forgot-password');
-  const cancelCreateAccount = document.getElementById('cancel-create-account');
-  const forgotPasswordFormEl = document.getElementById('forgot-password-form');
-  const createAccountFormEl = document.getElementById('create-account-form');
-  const watchTutorialBtn = document.getElementById('watch-tutorial-btn');
-
-  // Ensure modals are hidden on initialization
-  if (forgotPasswordModal) {
-    forgotPasswordModal.classList.add('hidden');
-  }
-  if (createAccountModal) {
-    createAccountModal.classList.add('hidden');
-  }
-
-  // Event handlers
-  function handleLoginSubmit(e) {
-    e.preventDefault();
-    const formData = new FormData(e.target);
-    loginForm = {
-      email: formData.get('email'),
-      password: formData.get('password')
-    };
-    console.log('Login attempt:', loginForm);
-    // TODO: Implement actual login logic
-    // setIsLoggedIn(true); // Simulate login
-  }
-
-  function showForgotPasswordModal() {
-    forgotPasswordModal.classList.remove('hidden');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function hideForgotPasswordModal() {
-    forgotPasswordModal.classList.add('hidden');
-    document.body.style.overflow = 'auto';
-  }
-
-  function showCreateAccountModal() {
-    createAccountModal.classList.remove('hidden');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function hideCreateAccountModal() {
-    createAccountModal.classList.add('hidden');
-    document.body.style.overflow = 'auto';
-  }
-
-  function handleForgotPasswordSubmit(e) {
-    e.preventDefault();
-    const formData = new FormData(e.target);
-    forgotPasswordForm = { email: formData.get('email') };
-    console.log('Forgot password request:', forgotPasswordForm);
-    // TODO: Handle forgot password logic
-    hideForgotPasswordModal();
-    alert('Password reset link sent to your email!');
-  }
-
-  function handleCreateAccountSubmit(e) {
-    e.preventDefault();
-    const formData = new FormData(e.target);
-    createAccountForm = {
-      accountNumber: formData.get('accountNumber'),
-      firstName: formData.get('firstName'),
-      lastName: formData.get('lastName'),
-      email: formData.get('email'),
-      phone: formData.get('phone'),
-      dateOfBirth: formData.get('dateOfBirth'),
-      password: formData.get('password'),
-      confirmPassword: formData.get('confirmPassword')
-    };
-
-    if (createAccountForm.password !== createAccountForm.confirmPassword) {
-      alert('Passwords do not match');
+    // Check if all required elements exist
+    if (!forgotPasswordModal || !createAccountModal) {
+      console.error('Modal elements not found, retrying...');
+      setTimeout(initializeModals, 10);
       return;
     }
 
-    console.log('Create account request:', createAccountForm);
-    // TODO: Handle create account logic
-    hideCreateAccountModal();
-    alert('Account created successfully! Please check your email for verification.');
-  }
+    // Ensure modals are hidden on initialization
+    forgotPasswordModal.classList.add('hidden');
+    createAccountModal.classList.add('hidden');
 
-  function handleWatchTutorial() {
-    // TODO: Implement tutorial video functionality
-    console.log('Watch tutorial clicked');
-    alert('Tutorial video coming soon!');
-  }
+    // State management
+    let isLoggedIn = false;
+    let loginForm = { email: '', password: '' };
+    let forgotPasswordForm = { email: '' };
+    let createAccountForm = {
+      accountNumber: '',
+      firstName: '',
+      lastName: '',
+      email: '',
+      phone: '',
+      dateOfBirth: '',
+      password: '',
+      confirmPassword: ''
+    };
 
-  // Modal backdrop click handlers
-  function handleModalBackdropClick(e, hideModal) {
-    if (e.target === e.currentTarget) {
-      hideModal();
-    }
-  }
-
-  // Add event listeners
-  if (loginFormEl) {
-    loginFormEl.addEventListener('submit', handleLoginSubmit);
-  }
-
-  if (forgotPasswordBtn) {
-    forgotPasswordBtn.addEventListener('click', (e) => {
+    // Event handlers
+    function handleLoginSubmit(e) {
       e.preventDefault();
-      showForgotPasswordModal();
-    });
-  }
+      const formData = new FormData(e.target);
+      loginForm = {
+        email: formData.get('email'),
+        password: formData.get('password')
+      };
+      console.log('Login attempt:', loginForm);
+      // TODO: Implement actual login logic
+      // setIsLoggedIn(true); // Simulate login
+    }
 
-  if (createAccountBtn) {
-    createAccountBtn.addEventListener('click', (e) => {
+    function showForgotPasswordModal() {
+      forgotPasswordModal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function hideForgotPasswordModal() {
+      forgotPasswordModal.classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    }
+
+    function showCreateAccountModal() {
+      createAccountModal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function hideCreateAccountModal() {
+      createAccountModal.classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    }
+
+    function handleForgotPasswordSubmit(e) {
       e.preventDefault();
-      showCreateAccountModal();
-    });
-  }
+      const formData = new FormData(e.target);
+      forgotPasswordForm = { email: formData.get('email') };
+      console.log('Forgot password request:', forgotPasswordForm);
+      // TODO: Handle forgot password logic
+      hideForgotPasswordModal();
+      alert('Password reset link sent to your email!');
+    }
 
-  if (closeForgotPassword) {
-    closeForgotPassword.addEventListener('click', hideForgotPasswordModal);
-  }
+    function handleCreateAccountSubmit(e) {
+      e.preventDefault();
+      const formData = new FormData(e.target);
+      createAccountForm = {
+        accountNumber: formData.get('accountNumber'),
+        firstName: formData.get('firstName'),
+        lastName: formData.get('lastName'),
+        email: formData.get('email'),
+        phone: formData.get('phone'),
+        dateOfBirth: formData.get('dateOfBirth'),
+        password: formData.get('password'),
+        confirmPassword: formData.get('confirmPassword')
+      };
 
-  if (closeCreateAccount) {
-    closeCreateAccount.addEventListener('click', hideCreateAccountModal);
-  }
-
-  if (cancelForgotPassword) {
-    cancelForgotPassword.addEventListener('click', hideForgotPasswordModal);
-  }
-
-  if (cancelCreateAccount) {
-    cancelCreateAccount.addEventListener('click', hideCreateAccountModal);
-  }
-
-  if (forgotPasswordFormEl) {
-    forgotPasswordFormEl.addEventListener('submit', handleForgotPasswordSubmit);
-  }
-
-  if (createAccountFormEl) {
-    createAccountFormEl.addEventListener('submit', handleCreateAccountSubmit);
-  }
-
-  if (watchTutorialBtn) {
-    watchTutorialBtn.addEventListener('click', handleWatchTutorial);
-  }
-
-  // Modal backdrop click listeners
-  if (forgotPasswordModal) {
-    forgotPasswordModal.addEventListener('click', (e) => handleModalBackdropClick(e, hideForgotPasswordModal));
-  }
-
-  if (createAccountModal) {
-    createAccountModal.addEventListener('click', (e) => handleModalBackdropClick(e, hideCreateAccountModal));
-  }
-
-  // Escape key handlers
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-      if (!forgotPasswordModal.classList.contains('hidden')) {
-        hideForgotPasswordModal();
+      if (createAccountForm.password !== createAccountForm.confirmPassword) {
+        alert('Passwords do not match');
+        return;
       }
-      if (!createAccountModal.classList.contains('hidden')) {
-        hideCreateAccountModal();
+
+      console.log('Create account request:', createAccountForm);
+      // TODO: Handle create account logic
+      hideCreateAccountModal();
+      alert('Account created successfully! Please check your email for verification.');
+    }
+
+    function handleWatchTutorial() {
+      // TODO: Implement tutorial video functionality
+      console.log('Watch tutorial clicked');
+      alert('Tutorial video coming soon!');
+    }
+
+    // Modal backdrop click handlers
+    function handleModalBackdropClick(e, hideModal) {
+      if (e.target === e.currentTarget) {
+        hideModal();
       }
     }
-  });
 
-  // Initialize lucide icons inside this page
-  if (typeof lucide !== 'undefined') {
-    lucide.createIcons();
-  }
+    // Add event listeners
+    if (loginFormEl) {
+      loginFormEl.addEventListener('submit', handleLoginSubmit);
+    }
 
-  // Cleanup function
-  return function cleanup() {
-    document.body.style.overflow = 'auto';
+    if (forgotPasswordBtn) {
+      forgotPasswordBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        showForgotPasswordModal();
+      });
+    }
+
+    if (createAccountBtn) {
+      createAccountBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        showCreateAccountModal();
+      });
+    }
+
+    if (closeForgotPassword) {
+      closeForgotPassword.addEventListener('click', hideForgotPasswordModal);
+    }
+
+    if (closeCreateAccount) {
+      closeCreateAccount.addEventListener('click', hideCreateAccountModal);
+    }
+
+    if (cancelForgotPassword) {
+      cancelForgotPassword.addEventListener('click', hideForgotPasswordModal);
+    }
+
+    if (cancelCreateAccount) {
+      cancelCreateAccount.addEventListener('click', hideCreateAccountModal);
+    }
+
+    if (forgotPasswordFormEl) {
+      forgotPasswordFormEl.addEventListener('submit', handleForgotPasswordSubmit);
+    }
+
+    if (createAccountFormEl) {
+      createAccountFormEl.addEventListener('submit', handleCreateAccountSubmit);
+    }
+
+    if (watchTutorialBtn) {
+      watchTutorialBtn.addEventListener('click', handleWatchTutorial);
+    }
+
+    // Modal backdrop click listeners
+    if (forgotPasswordModal) {
+      forgotPasswordModal.addEventListener('click', (e) => handleModalBackdropClick(e, hideForgotPasswordModal));
+    }
+
+    if (createAccountModal) {
+      createAccountModal.addEventListener('click', (e) => handleModalBackdropClick(e, hideCreateAccountModal));
+    }
+
+    // Escape key handlers
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        if (!forgotPasswordModal.classList.contains('hidden')) {
+          hideForgotPasswordModal();
+        }
+        if (!createAccountModal.classList.contains('hidden')) {
+          hideCreateAccountModal();
+        }
+      }
+    });
+
+    // Initialize lucide icons inside this page
+    if (typeof lucide !== 'undefined') {
+      lucide.createIcons();
+    }
+
+    // Cleanup function
+    return function cleanup() {
+      document.body.style.overflow = 'auto';
+    };
   };
+
+  // Start initialization
+  initializeModals();
 }
