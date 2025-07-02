@@ -15,7 +15,7 @@
 
 @media (min-width: 768px) {
   .mobile-nav-overlay {
-    display: none !important;
+    display: none;
   }
 }
 

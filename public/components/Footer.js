@@ -68,7 +68,7 @@ export function createFooter() {
               <ul class="footer-links">
                 <li><a href="/about" class="footer-link">About Us</a></li>
                 <li><a href="/treatments" class="footer-link">Treatments</a></li>
-                <li><a href="/our-process" class="footer-link">Our Process</a></li>
+                <li><a href="/process" class="footer-link">Our Process</a></li>
                 <li><a href="/team" class="footer-link">Meet the Team</a></li>
               </ul>
             </div>

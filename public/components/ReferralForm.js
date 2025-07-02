@@ -219,9 +219,9 @@ export function createReferralForm() {
             </div>
 
             <!-- Alternative Contact Methods -->
-            <div class="referral-form-section">
-              <h3 class="referral-form-section-title">
-                <i data-lucide="phone" class="referral-form-section-icon"></i>
+            <div class="referral-form-group">
+              <h3 class="referral-form-group-title">
+                <i data-lucide="phone" class="referral-form-group-icon"></i>
                 Alternative Contact Methods
               </h3>
               <div class="referral-alternative-methods">

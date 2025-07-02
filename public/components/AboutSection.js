@@ -23,7 +23,7 @@ export function createAboutSection() {
               <a href="/team" class="about-btn about-btn-primary">
                 Meet Our Team
               </a>
-              <a href="/our-process" class="about-btn about-btn-secondary">
+              <a href="/process" class="about-btn about-btn-secondary">
                 Our Process
               </a>
             </div>

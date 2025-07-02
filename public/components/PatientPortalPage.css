@@ -213,7 +213,7 @@
 #create-account-btn:focus {
   outline: 2px solid var(--color-accent-teal);
   outline-offset: 2px;
-  border-radius: 2px;
+  border-radius: 0.125rem;
 }
 
 .space-y-6 > * + * {
@@ -447,8 +447,8 @@
 
 #forgot-password-modal.hidden,
 #create-account-modal.hidden {
-  display: none !important;
-  visibility: hidden !important;
+  display: none;
+  visibility: hidden;
 }
 
 .modal-content {
@@ -563,7 +563,7 @@
 }
 
 .patient-portal-page .rounded-full {
-  border-radius: 9999px;
+  border-radius: 50%;
 }
 
 .patient-portal-page .border {
@@ -641,12 +641,12 @@
 
 .modal-content::-webkit-scrollbar-track {
   background: #f1f1f1;
-  border-radius: 4px;
+  border-radius: 0.25rem;
 }
 
 .modal-content::-webkit-scrollbar-thumb {
   background: var(--color-accent-teal);
-  border-radius: 4px;
+  border-radius: 0.25rem;
 }
 
 .modal-content::-webkit-scrollbar-thumb:hover {
@@ -692,11 +692,11 @@
 @media print {
   #forgot-password-modal,
   #create-account-modal {
-    display: none !important;
+    display: none;
   }
   
   .patient-portal-page {
-    background: white !important;
+    background: var(--color-primary-white);
   }
 }
 

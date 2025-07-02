@@ -39,6 +39,11 @@ class Router {
       // Dynamic route for treatment details - handled in handleRoute
     };
 
+    // Scroll position tracking
+    this.scrollPositions = new Map();
+    this.visitedPages = new Set();
+    this.currentPath = null;
+
     this.init();
   }
 
@@ -59,16 +64,36 @@ class Router {
         this.navigateTo(link.getAttribute('href'));
       }
     });
+
+    // Save scroll position before page unload
+    window.addEventListener('beforeunload', () => {
+      this.saveScrollPosition();
+    });
+
+    // Save scroll position on scroll (throttled)
+    let scrollTimeout;
+    window.addEventListener('scroll', () => {
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        this.saveScrollPosition();
+      }, 100);
+    });
   }
 
   handleRoute() {
     const path = window.location.pathname;
+
+    // Save current scroll position before navigation
+    if (this.currentPath) {
+      this.saveScrollPosition();
+    }
 
     // Check for dynamic treatment detail route
     if (path.startsWith('/treatments/') && path !== '/treatments') {
       const slug = path.split('/treatments/')[1];
       this.renderTreatmentDetailPage(slug);
       updateNavbarActiveState();
+      this.currentPath = path;
       return;
     }
 
@@ -77,6 +102,7 @@ class Router {
       const slug = path.split('/careers/')[1];
       this.renderJobDetailPage(slug);
       updateNavbarActiveState();
+      this.currentPath = path;
       return;
     }
 
@@ -85,6 +111,9 @@ class Router {
 
     // Update navbar active state after route change
     updateNavbarActiveState();
+
+    // Update current path
+    this.currentPath = path;
   }
 
   navigateTo(path) {
@@ -92,7 +121,32 @@ class Router {
     this.handleRoute();
   }
 
+  saveScrollPosition() {
+    if (this.currentPath) {
+      this.scrollPositions.set(this.currentPath, window.scrollY);
+    }
+  }
+
+  restoreScrollPosition(path) {
+    const savedPosition = this.scrollPositions.get(path);
+    if (savedPosition !== undefined) {
+      // Use requestAnimationFrame to ensure DOM is ready
+      requestAnimationFrame(() => {
+        window.scrollTo(0, savedPosition);
+      });
+      return true;
+    }
+    return false;
+  }
+
+  scrollToTop() {
+    window.scrollTo(0, 0);
+  }
+
   renderHomePage() {
+    const path = '/';
+    const isReturning = this.visitedPages.has(path);
+
     // Clean up any existing content
     this.cleanup();
 
@@ -126,9 +180,20 @@ class Router {
     initTeamSection();
     initFAQSection();
     initNewsletterSection();
+
+    // Handle scroll restoration
+    this.visitedPages.add(path);
+    if (isReturning) {
+      this.restoreScrollPosition(path);
+    } else {
+      this.scrollToTop();
+    }
   }
 
   renderAboutPage() {
+    const path = '/about';
+    const isReturning = this.visitedPages.has(path);
+
     // Clean up any existing content
     this.cleanup();
 
@@ -137,9 +202,20 @@ class Router {
 
     // Initialize about page
     initAboutPage();
+
+    // Handle scroll restoration
+    this.visitedPages.add(path);
+    if (isReturning) {
+      this.restoreScrollPosition(path);
+    } else {
+      this.scrollToTop();
+    }
   }
 
   renderTreatmentsPage() {
+    const path = '/treatments';
+    const isReturning = this.visitedPages.has(path);
+
     // Clean up any existing content
     this.cleanup();
 
@@ -148,9 +224,20 @@ class Router {
 
     // Initialize treatments page
     initTreatmentsPage();
+
+    // Handle scroll restoration
+    this.visitedPages.add(path);
+    if (isReturning) {
+      this.restoreScrollPosition(path);
+    } else {
+      this.scrollToTop();
+    }
   }
 
   renderTreatmentDetailPage(slug) {
+    const path = `/treatments/${slug}`;
+    const isReturning = this.visitedPages.has(path);
+
     // Clean up any existing content
     this.cleanup();
 
@@ -159,9 +246,20 @@ class Router {
 
     // Initialize treatment detail page
     initTreatmentDetailPage();
+
+    // Handle scroll restoration
+    this.visitedPages.add(path);
+    if (isReturning) {
+      this.restoreScrollPosition(path);
+    } else {
+      this.scrollToTop();
+    }
   }
 
   renderProcessPage() {
+    const path = '/process';
+    const isReturning = this.visitedPages.has(path);
+
     // Clean up any existing content
     this.cleanup();
 
@@ -170,9 +268,20 @@ class Router {
 
     // Initialize process page
     initProcessPage();
+
+    // Handle scroll restoration
+    this.visitedPages.add(path);
+    if (isReturning) {
+      this.restoreScrollPosition(path);
+    } else {
+      this.scrollToTop();
+    }
   }
 
   renderSchedulePage() {
+    const path = '/schedule';
+    const isReturning = this.visitedPages.has(path);
+
     // Clean up any existing content
     this.cleanup();
 
@@ -181,9 +290,20 @@ class Router {
 
     // Initialize schedule page
     initSchedulePage();
+
+    // Handle scroll restoration
+    this.visitedPages.add(path);
+    if (isReturning) {
+      this.restoreScrollPosition(path);
+    } else {
+      this.scrollToTop();
+    }
   }
 
   renderReviewsPage() {
+    const path = '/reviews';
+    const isReturning = this.visitedPages.has(path);
+
     // Clean up any existing content
     this.cleanup();
 
@@ -192,9 +312,20 @@ class Router {
 
     // Initialize reviews page
     initReviewsPage();
+
+    // Handle scroll restoration
+    this.visitedPages.add(path);
+    if (isReturning) {
+      this.restoreScrollPosition(path);
+    } else {
+      this.scrollToTop();
+    }
   }
 
   renderTeamPage() {
+    const path = '/team';
+    const isReturning = this.visitedPages.has(path);
+
     // Clean up any existing content
     this.cleanup();
 
@@ -203,9 +334,20 @@ class Router {
 
     // Initialize team page
     initTeamPage();
+
+    // Handle scroll restoration
+    this.visitedPages.add(path);
+    if (isReturning) {
+      this.restoreScrollPosition(path);
+    } else {
+      this.scrollToTop();
+    }
   }
 
   renderCareersPage() {
+    const path = '/careers';
+    const isReturning = this.visitedPages.has(path);
+
     // Clean up any existing content
     this.cleanup();
 
@@ -214,9 +356,20 @@ class Router {
 
     // Initialize careers page
     initCareersPage();
+
+    // Handle scroll restoration
+    this.visitedPages.add(path);
+    if (isReturning) {
+      this.restoreScrollPosition(path);
+    } else {
+      this.scrollToTop();
+    }
   }
 
   renderJobDetailPage(slug) {
+    const path = `/careers/${slug}`;
+    const isReturning = this.visitedPages.has(path);
+
     // Clean up any existing content
     this.cleanup();
 
@@ -225,9 +378,20 @@ class Router {
 
     // Initialize job detail page
     initJobDetailPage();
+
+    // Handle scroll restoration
+    this.visitedPages.add(path);
+    if (isReturning) {
+      this.restoreScrollPosition(path);
+    } else {
+      this.scrollToTop();
+    }
   }
 
   renderContactPage() {
+    const path = '/contact';
+    const isReturning = this.visitedPages.has(path);
+
     // Clean up any existing content
     this.cleanup();
 
@@ -236,9 +400,20 @@ class Router {
 
     // Initialize contact page
     initContactPage();
+
+    // Handle scroll restoration
+    this.visitedPages.add(path);
+    if (isReturning) {
+      this.restoreScrollPosition(path);
+    } else {
+      this.scrollToTop();
+    }
   }
 
   renderPatientPortalPage() {
+    const path = '/patient-portal';
+    const isReturning = this.visitedPages.has(path);
+
     // Clean up any existing content
     this.cleanup();
 
@@ -247,9 +422,20 @@ class Router {
 
     // Initialize patient portal page
     initPatientPortalPage();
+
+    // Handle scroll restoration
+    this.visitedPages.add(path);
+    if (isReturning) {
+      this.restoreScrollPosition(path);
+    } else {
+      this.scrollToTop();
+    }
   }
 
   renderReferralsPage() {
+    const path = '/referrals';
+    const isReturning = this.visitedPages.has(path);
+
     // Clean up any existing content
     this.cleanup();
 
@@ -258,6 +444,14 @@ class Router {
 
     // Initialize referrals page
     initReferralsPage();
+
+    // Handle scroll restoration
+    this.visitedPages.add(path);
+    if (isReturning) {
+      this.restoreScrollPosition(path);
+    } else {
+      this.scrollToTop();
+    }
   }
 
   cleanup() {

@@ -1,5 +1,9 @@
 /* Referral Form Section - Main Container */
 .referral-form-section {
+  --text-muted: #666;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 2rem;
+  
   padding: 60px 0 200px 0;
   background: var(--color-primary-white);
 }
@@ -24,7 +28,7 @@
 
 .referral-form-description {
   font-size: 1.125rem;
-  color: #666;
+  color: var(--text-muted);
   line-height: 1.6;
   max-width: 600px;
   margin: 0 auto;
@@ -172,7 +176,7 @@
 .referral-form-privacy {
   margin-top: 1.5rem;
   font-size: 0.875rem;
-  color: #666;
+  color: var(--text-muted);
   line-height: 1.5;
   max-width: 500px;
   margin-left: auto;
@@ -275,7 +279,7 @@
 }
 
 .referral-success-message {
-  color: #666;
+  color: var(--text-muted);
   line-height: 1.6;
   margin-bottom: 2rem;
 }
@@ -323,8 +327,8 @@
 }
 
 .referral-contact-description {
-  font-size: 1.25rem;
-  color: #666;
+  font-size: var(--font-size-lg);
+  color: var(--text-muted);
   margin-bottom: 3rem;
   max-width: 600px;
   margin-left: auto;
@@ -407,16 +411,6 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .referral-form-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .referral-alternative-methods {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 768px) {
   .referral-form-section {
     padding: 40px 0 150px 0;
   }
@@ -426,7 +420,7 @@
   }
   
   .referral-form-title {
-    font-size: 2rem;
+    font-size: var(--font-size-xl);
   }
   
   .referral-form-description {
@@ -436,11 +430,19 @@
   .referral-form {
     padding: 1.5rem;
   }
+  
+  .referral-form-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .referral-alternative-methods {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 480px) {
   .referral-form-title {
-    font-size: 2rem;
+    font-size: var(--font-size-xl);
   }
   
   .referral-form {
@@ -448,7 +450,7 @@
   }
   
   .referral-form-group-title {
-    font-size: 1.25rem;
+    font-size: var(--font-size-lg);
   }
   
   .referral-form-submit {

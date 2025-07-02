@@ -23,8 +23,9 @@
 }
 
 /* Team Grid Section */
-.team-grid-section {
+.team-section .team-grid-section {
   margin-bottom: 4rem;
+  background-color: #e5e5e5;
 }
 
 .team-header {

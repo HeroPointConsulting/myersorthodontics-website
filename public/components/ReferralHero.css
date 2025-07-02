@@ -1,5 +1,8 @@
 /* Referral Hero Section */
 .referral-hero {
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 2rem;
+  
   position: relative;
   background: var(--color-accent-teal);
   color: var(--color-primary-white);
@@ -67,7 +70,7 @@
 }
 
 .referral-hero-description {
-  font-size: 1.25rem;
+  font-size: var(--font-size-lg);
   line-height: 1.6;
   margin-bottom: 2.5rem;
   color: rgba(255, 255, 255, 0.9);
@@ -285,7 +288,7 @@
 
 @media (max-width: 480px) {
   .referral-hero-title {
-    font-size: 2rem;
+    font-size: var(--font-size-xl);
   }
   
   .referral-hero-badge {
