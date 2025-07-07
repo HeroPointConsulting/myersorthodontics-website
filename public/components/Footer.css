@@ -139,6 +139,12 @@
   padding: 0.5rem 0;
 }
 
+@media (max-width: 767px) {
+  .footer-schedule-link {
+    justify-content: center;
+  }
+}
+
 .footer-schedule-link:hover {
   color: var(--color-accent-lime-green);
 }

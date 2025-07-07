@@ -1,5 +1,5 @@
 import { createLogo } from './Logo.js';
-// import { MobileNav } from './MobileNav.js'; // TODO: Create MobileNav component
+import { createMobileNav, openMobileNav, closeMobileNav, initMobileNav, updateMobileNavDisplay } from './MobileNav.js';
 
 const navigationItems = [
   { name: 'About', href: '/about' },
@@ -82,8 +82,8 @@ export function createNavbar() {
       </div>
     </nav>
 
-    <!-- TODO: MobileNav component will be rendered here -->
-    <!-- <div id="mobile-nav-placeholder"></div> -->
+    <!-- Mobile Navigation Placeholder -->
+    <div id="mobile-nav-placeholder"></div>
   `;
 }
 
@@ -103,14 +103,25 @@ export function initNavbar() {
   // Set initial active state
   updateNavbarActiveState();
 
-  // TODO: Mount child components when ready
-  // initLogo('#logo-placeholder');
-  // initMobileNav('#mobile-nav-placeholder');
+  // Initialize mobile nav placeholder
+  const mobileNavPlaceholder = document.getElementById('mobile-nav-placeholder');
+  if (mobileNavPlaceholder) {
+    mobileNavPlaceholder.innerHTML = createMobileNav();
+    initMobileNav();
+  }
 }
 
 export { updateNavbarActiveState };
 
 function toggleMobileMenu() {
   isMobileMenuOpen = !isMobileMenuOpen;
-  // TODO: Show/hide MobileNav component when ready
+  
+  if (isMobileMenuOpen) {
+    openMobileNav();
+  } else {
+    closeMobileNav();
+  }
+  
+  // Update the mobile nav display
+  updateMobileNavDisplay();
 }
