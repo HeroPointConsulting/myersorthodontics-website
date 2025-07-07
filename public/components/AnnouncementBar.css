@@ -6,9 +6,29 @@
   padding: 0.5rem 1rem;
 }
 
-.announcement-bar p {
+.announcement-text {
   font-size: 0.875rem;
   margin: 0;
+}
+
+/* Desktop text - hidden on mobile */
+.announcement-desktop {
+  display: inline;
+}
+
+.announcement-mobile {
+  display: none;
+}
+
+/* Mobile text - shown on mobile, hidden on desktop */
+@media (max-width: 767px) {
+  .announcement-desktop {
+    display: none;
+  }
+  
+  .announcement-mobile {
+    display: inline;
+  }
 }
 
 .announcement-bar a {

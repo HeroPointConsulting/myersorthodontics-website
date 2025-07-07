@@ -35,7 +35,8 @@ export function createHero() {
       <div class="hero-content">
         <div class="hero-content-inner">
           <p class="hero-tagline">
-            Cutting-Edge Orthodontics • Family-Owned Care
+            <span class="tagline-desktop">Cutting-Edge Orthodontics • Family-Owned Care</span>
+            <span class="tagline-mobile">Cutting-Edge Orthodontics<br>Family-Owned Care</span>
           </p>
           <h1 class="hero-title">
             <span class="line">Confident Smiles,</span>
@@ -43,7 +44,7 @@ export function createHero() {
             <span class="line">Personalised Care</span>
           </h1>
           <p class="hero-description">
-            Where advanced technology meets heartfelt service—creating healthy,
+            Where advanced technology meets heartfelt service - creating healthy,
             lasting smiles for every age. From your first visit to your final
             smile, experience thoughtful, professional care tailored just for
             you.

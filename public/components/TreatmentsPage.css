@@ -81,6 +81,8 @@
   }
 }
 
+
+
 .treatments-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -144,6 +146,8 @@
   padding: 2rem;
   text-align: left;
 }
+
+
 
 .treatment-benefits {
   margin-bottom: 1.5rem;
@@ -474,9 +478,59 @@
     padding: 1.5rem;
   }
   
+  /* Mobile centering for treatment cards */
+  .treatments-grid-container {
+    text-align: center;
+  }
+  
+  .treatment-card {
+    text-align: center;
+  }
+  
+  .treatment-content {
+    text-align: center;
+  }
+  
+  .treatment-header {
+    text-align: center;
+  }
+  
+  .treatment-name {
+    text-align: center;
+  }
+  
+  .treatment-description {
+    text-align: center;
+  }
+  
+  .treatment-benefits {
+    text-align: center;
+  }
+  
+  .treatment-card h4.treatment-benefits-title {
+    text-align: center;
+  }
+  
+  .treatment-benefits-list {
+    text-align: left;
+    display: inline-block;
+    margin: 0 auto;
+  }
+  
+  .treatment-benefit-item {
+    justify-content: flex-start;
+    text-align: left;
+  }
+  
   .treatment-footer {
     flex-direction: column;
+    justify-content: center;
     gap: 1rem;
-    align-items: flex-start;
+    text-align: center;
+    align-items: center;
+  }
+  
+  .treatment-duration {
+    text-align: center;
   }
 } 
